@@ -6,12 +6,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 6f;
-    [SerializeField] float moveMultiplier = 10f;
-    [SerializeField] float bodyDrag = 8f;
+    [SerializeField] float movementSpeed = 10f;
+    [SerializeField] float groundMovementMultiplier = 5f;
+    [SerializeField] float airMovementMultiplier = 0.1f;
+
+    [Header("Jumping")]
+    [SerializeField] float jumpForce = 10f;
+
+    [Header("Drag")]
+    [SerializeField] float groundDrag = 5f;
+    [SerializeField] float airDrag = 1f;
+
+    [Header("Keybinding")]
+    [SerializeField] KeyCode jumpKey = KeyCode.Space;
+
+    readonly float playerHeight = 2f;
 
     float horizontalMove;
     float verticalMove;
+
+    bool isGrounded;
 
     Vector3 moveDirection;
 
@@ -19,14 +33,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        RigidbodySetup();
+    }
+
+    private void RigidbodySetup()
+    {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
 
     private void Update()
     {
+        SetIsGrounded();
+
         MyInput();
         ControlDrag();
+
+        if (Input.GetKeyDown(jumpKey) && isGrounded)
+        {
+            Jump();
+        }
     }
 
     private void MyInput()
@@ -39,7 +65,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void ControlDrag()
     {
-        rb.drag = bodyDrag;
+        if (isGrounded)
+        {
+            rb.drag = groundDrag;
+        }
+        else
+        {
+            rb.drag = airDrag;
+        }
+    }
+
+    private void SetIsGrounded()
+    {
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight / 2 + 0.1f);
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
     private void FixedUpdate()
@@ -49,6 +92,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        rb.AddForce(moveDirection.normalized * moveSpeed * moveMultiplier, ForceMode.Acceleration);
+        if (isGrounded)
+        {
+            rb.AddForce(moveDirection.normalized * movementSpeed * groundMovementMultiplier, ForceMode.Acceleration);
+        }
+        else
+        {
+            rb.AddForce(moveDirection.normalized * movementSpeed * groundMovementMultiplier * airMovementMultiplier, ForceMode.Acceleration);
+        }
     }
 }

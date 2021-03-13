@@ -240,9 +240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e87214fa7a573348a409c38b160cd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  moveMultiplier: 10
-  bodyDrag: 8
+  movementSpeed: 10
+  groundMovementMultiplier: 5
+  airMovementMultiplier: 0.1
+  jumpForce: 10
+  groundDrag: 5
+  airDrag: 1
+  jumpKey: 32
 --- !u!114 &26488581943530747
 MonoBehaviour:
   m_ObjectHideFlags: 0
