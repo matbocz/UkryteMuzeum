@@ -48,7 +48,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: W-LastRoom
-    second: {fileID: 2100000, guid: c1feefcb3896cba4998803072f741833, type: 2}
+    second: {fileID: 2100000, guid: 305b14be641b20e4189acd46c702bec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: W-LastRoomDown
+    second: {fileID: 2100000, guid: c900de4e825df5c4caeb05bd9ac9db85, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
