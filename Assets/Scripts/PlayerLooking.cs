@@ -6,10 +6,10 @@ using UnityEngine;
 public class PlayerLooking : MonoBehaviour
 {
     [Header("Looking")]
-    [SerializeField] Transform orientation;
-    [SerializeField] Transform cameraHolder;
+    [SerializeField] Transform orientation;[Space(10)]
+    [SerializeField] Transform cameraHolder;[Space(10)]
     [SerializeField] float sensitivityX = 60f;
-    [SerializeField] float sensitivityY = 60f;
+    [SerializeField] float sensitivityY = 60f;[Space(10)]
     [SerializeField] float rotationMultiplier = 0.02f;
 
     float mouseX;
@@ -32,6 +32,7 @@ public class PlayerLooking : MonoBehaviour
     private void Update()
     {
         MyInput();
+
         ProcessRotation();
     }
 

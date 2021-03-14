@@ -349,12 +349,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 1928191993}
   movementSpeed: 10
-  groundMovementMultiplier: 5
-  airMovementMultiplier: 0.1
-  jumpForce: 10
-  groundDrag: 5
-  airDrag: 1
+  groundMovementMultiplier: 2
+  airMovementMultiplier: 0.2
+  accelerationMultiplier: 2
+  jumpForce: 6
+  groundDrag: 4
+  airDrag: 0.4
   jumpKey: 32
+  accelerateKey: 304
 --- !u!114 &26488581943530747
 MonoBehaviour:
   m_ObjectHideFlags: 0
