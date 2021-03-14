@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
+    [SerializeField] Transform orientation;
     [SerializeField] float movementSpeed = 10f;
     [SerializeField] float groundMovementMultiplier = 5f;
     [SerializeField] float airMovementMultiplier = 0.1f;
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float groundDrag = 5f;
     [SerializeField] float airDrag = 1f;
 
-    [Header("Keybinding")]
+    [Header("Key bindings")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
 
     readonly float playerHeight = 2f;
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
 
-        moveDirection = transform.forward * verticalMove + transform.right * horizontalMove;
+        moveDirection = orientation.forward * verticalMove + orientation.right * horizontalMove;
     }
 
     private void ControlDrag()

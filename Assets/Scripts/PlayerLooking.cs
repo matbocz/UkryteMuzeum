@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlayerLooking : MonoBehaviour
 {
     [Header("Looking")]
+    [SerializeField] Transform orientation;
+    [SerializeField] Transform cameraHolder;
     [SerializeField] float sensitivityX = 60f;
     [SerializeField] float sensitivityY = 60f;
     [SerializeField] float rotationMultiplier = 0.02f;
-
-    Camera cam;
 
     float mouseX;
     float mouseY;
@@ -20,13 +20,11 @@ public class PlayerLooking : MonoBehaviour
 
     private void Start()
     {
-        CameraSetup();
+        CursorSetup();
     }
 
-    private void CameraSetup()
+    private void CursorSetup()
     {
-        cam = GetComponentInChildren<Camera>();
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -50,7 +48,7 @@ public class PlayerLooking : MonoBehaviour
 
     private void ProcessRotation()
     {
-        cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        cameraHolder.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }
