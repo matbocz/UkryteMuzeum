@@ -30,7 +30,7 @@ Transform:
   m_Father: {fileID: 3141947339606420544}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1507359437
+--- !u!1 &743221051
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,8 +38,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1507359439}
-  - component: {fileID: 1507359438}
+  - component: {fileID: 743221053}
+  - component: {fileID: 743221052}
   m_Layer: 0
   m_Name: Camera Holder
   m_TagString: Untagged
@@ -47,35 +47,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1507359439
+--- !u!4 &743221053
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507359437}
+  m_GameObject: {fileID: 743221051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1778972204}
+  - {fileID: 789772894}
   m_Father: {fileID: 3141947339606420544}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1507359438
+--- !u!114 &743221052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507359437}
+  m_GameObject: {fileID: 743221051}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4755396cb699f714bbf77b3912f3ac9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPosition: {fileID: 409512344}
---- !u!1 &1778972203
+--- !u!1 &789772893
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,37 +83,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1778972204}
-  - component: {fileID: 1778972206}
-  - component: {fileID: 1778972205}
+  - component: {fileID: 789772894}
+  - component: {fileID: 789772896}
+  - component: {fileID: 789772895}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1778972204
+--- !u!4 &789772894
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778972203}
+  m_GameObject: {fileID: 789772893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1507359439}
+  m_Father: {fileID: 743221053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1778972206
+--- !u!20 &789772896
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778972203}
+  m_GameObject: {fileID: 789772893}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -150,13 +150,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1778972205
+--- !u!81 &789772895
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778972203}
+  m_GameObject: {fileID: 789772893}
   m_Enabled: 1
 --- !u!1 &1928191992
 GameObject:
@@ -315,7 +315,7 @@ Transform:
   - {fileID: 3141947338696674263}
   - {fileID: 1928191993}
   - {fileID: 409512344}
-  - {fileID: 1507359439}
+  - {fileID: 743221053}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 1928191993}
-  cameraHolder: {fileID: 1507359439}
+  cameraHolder: {fileID: 743221053}
   sensitivityX: 60
   sensitivityY: 60
   rotationMultiplier: 0.02
