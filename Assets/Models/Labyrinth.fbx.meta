@@ -42,13 +42,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: HiddenRoom
+    second: {fileID: 2100000, guid: f562c7399900a484abfa39dce0db9e79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Laser
+    second: {fileID: 2100000, guid: 8613c2e9a76a52845a7db164f13b798f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stand
+    second: {fileID: 2100000, guid: 0e69b56e889b36242a5eb6ee4a9cbcaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StartHouse
+    second: {fileID: 2100000, guid: 3c1080ac82fecf844b235ee81bf73863, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StartHouseFloor
+    second: {fileID: 2100000, guid: d05de324754dfff4b8609873b3e53e75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Straw
     second: {fileID: 2100000, guid: 1d6b0bff159f0e445ad911bef8f299c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: TunnelFloor
+    second: {fileID: 2100000, guid: a3f3e98318f050c40935a6d3266d874a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TunnelWall
+    second: {fileID: 2100000, guid: 22c256119f3074e42a3075ed209f7861, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: W-LastRoom
-    second: {fileID: 2100000, guid: c1feefcb3896cba4998803072f741833, type: 2}
+    second: {fileID: 2100000, guid: 305b14be641b20e4189acd46c702bec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: W-LastRoomDown
+    second: {fileID: 2100000, guid: c900de4e825df5c4caeb05bd9ac9db85, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
