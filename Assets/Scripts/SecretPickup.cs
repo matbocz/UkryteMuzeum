@@ -32,7 +32,8 @@ public class SecretPickup : MonoBehaviour
 
     private void StopTime()
     {
-        Camera.main.GetComponent<PlayerLooking>().enabled = false;
+        Camera.main.GetComponent<PlayerLook>().enabled = false;
+
         Time.timeScale = 0;
     }
 
@@ -52,16 +53,13 @@ public class SecretPickup : MonoBehaviour
 
     private void StartTime()
     {
-        Camera.main.GetComponent<PlayerLooking>().enabled = true;
+        Camera.main.GetComponent<PlayerLook>().enabled = true;
+
         Time.timeScale = 1;
     }
 
     private void HideCursor()
     {
-        Camera.main.GetComponent<PlayerLooking>().enabled = true;
-
-        Time.timeScale = 1;
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
