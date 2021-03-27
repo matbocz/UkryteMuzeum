@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9e35aa0bf23a7b48929e6c9cd669a8a
+guid: a663da7e5635e37479935e9b11e9eddc
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,88 +7,73 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Basic
-    second: {fileID: 2100000, guid: 2afa70b428103024cbca16f68578fa7b, type: 2}
+      name: Braniewo
+    second: {fileID: 2100000, guid: c63e584502524c547aeacf353b35737a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Basicx2
-    second: {fileID: 2100000, guid: 2e7c2aee7c9354146bd0d779b34ccb5d, type: 2}
+      name: Dzialdowo
+    second: {fileID: 2100000, guid: 7b524960954e9a64bac3f57152920e27, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Concrete
-    second: {fileID: 2100000, guid: fca7db1b840e97d43ba5773628c1b7dc, type: 2}
+      name: Elblag
+    second: {fileID: 2100000, guid: c68586bc996e55f439c78030b45e91a6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: F_basicHouse
-    second: {fileID: 2100000, guid: 72ab4f6dca18ed94a82913941d2b271b, type: 2}
+      name: Frombork
+    second: {fileID: 2100000, guid: ba9f9122e6415ae40807f41cdf6d1b68, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: F_castle
-    second: {fileID: 2100000, guid: 769f43fd26b31d74c80999809d07f373, type: 2}
+      name: Grunwald
+    second: {fileID: 2100000, guid: 0a0669ca75649ca44898f55d7c64744a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: F_cathedral
-    second: {fileID: 2100000, guid: 882d2195d7f15254c9a6d1ebd50cf846, type: 2}
+      name: Ketrzyn
+    second: {fileID: 2100000, guid: 0e5e70fbd6c6fd0448c7a668b7ca4dc2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: F_lastRoom
-    second: {fileID: 2100000, guid: d7c04ecb0b0779f42b0f5d0da2c2b9d5, type: 2}
+      name: Legend
+    second: {fileID: 2100000, guid: 54c7f7014ce2cc54cb718c06965fb56e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: HiddenRoom
-    second: {fileID: 2100000, guid: f562c7399900a484abfa39dce0db9e79, type: 2}
+      name: LetteringColor
+    second: {fileID: 2100000, guid: c2fe1250cd8457a4382ea405abcfe31d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Laser
-    second: {fileID: 2100000, guid: 8613c2e9a76a52845a7db164f13b798f, type: 2}
+      name: MapWarmiaIMazury
+    second: {fileID: 2100000, guid: 14a89b1cae1fcd64191b7ddb839d952d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Stand
-    second: {fileID: 2100000, guid: 0e69b56e889b36242a5eb6ee4a9cbcaf, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 3b6687f102f60684ca47c86b48dd0b06, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Straw
-    second: {fileID: 2100000, guid: 1d6b0bff159f0e445ad911bef8f299c0, type: 2}
+      name: Olsztyn
+    second: {fileID: 2100000, guid: 002c07cf59b40ff4a921fdaf96875189, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: TunnelFloor
-    second: {fileID: 2100000, guid: a3f3e98318f050c40935a6d3266d874a, type: 2}
+      name: Ostoda
+    second: {fileID: 2100000, guid: e4009e4fa433d3148b67a3481a2a8d86, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: TunnelWall
-    second: {fileID: 2100000, guid: 22c256119f3074e42a3075ed209f7861, type: 2}
+      name: Wall
+    second: {fileID: 2100000, guid: 3bd3bf169fab5aa4ba9219edb91bdd5c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: W-LastRoom
-    second: {fileID: 2100000, guid: 81c79629982da504892822c1f0b9328f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: W-basicHouse
-    second: {fileID: 2100000, guid: 0f191613abddcf64a9492641fd4af6c8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: W-castle
-    second: {fileID: 2100000, guid: b62012aefed795445abe117a231b3da3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: W-cathedral
-    second: {fileID: 2100000, guid: 45724fa18481fc947bcbb6abb1b3a63a, type: 2}
+      name: Wegorzewo
+    second: {fileID: 2100000, guid: 7b855bd548e2c02419ea3700a8eb6ceb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
