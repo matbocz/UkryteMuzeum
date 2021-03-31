@@ -22,21 +22,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Dog1
-    second: {fileID: 2100000, guid: c9c5e87b2d4e11b4c908f695bb45b274, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dog2
-    second: {fileID: 2100000, guid: 2ec26320c469c8842a63e93903a57df0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dog3
-    second: {fileID: 2100000, guid: 1b0069a404ab8ef4e9f3f242d4289d55, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: F_basicHouse
     second: {fileID: 2100000, guid: 72ab4f6dca18ed94a82913941d2b271b, type: 2}
   - first:
@@ -74,6 +59,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Shell3
     second: {fileID: 2100000, guid: 1d98fb093fa81a848b402acf1ade3481, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WorldSnake
+    second: {fileID: 2100000, guid: 2ef5e1812dec4e64cb487ac423889325, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WorldSnake2
+    second: {fileID: 2100000, guid: 4093539b952edb442bafa694e8f07530, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WorldSnake3
+    second: {fileID: 2100000, guid: 37e1bd8f03a218d45802d80cfb1552b1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
