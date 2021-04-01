@@ -22,6 +22,15 @@ public class Pointer : MonoBehaviour
         var raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         Physics.Raycast(raycast, out hit, range);
-        Debug.Log("I hit: " + hit.transform.name);
+        if(hit.transform != null)
+        {
+            Debug.Log("Name: " + hit.transform.name + "\nTag: " + hit.transform.tag);
+
+            if (hit.transform.tag == "MuseumSecret")
+            {
+                SecretPickup secretPickup = hit.transform.GetComponent<SecretPickup>();
+                secretPickup.OpenSecretPanel();
+            }
+        }
     }
 }
