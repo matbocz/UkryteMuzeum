@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HiddenSecretsManager : MonoBehaviour
 {
     [Header("Text")]
-    [SerializeField] private Text secretsFoundText;
-    [SerializeField] private Text passwordUIText;
-    [SerializeField] private Text passwordWorldText;
+    [SerializeField] private TextMeshPro secretsFoundText;
+    [SerializeField] private TextMeshPro passwordUIText;
+    [SerializeField] private TextMeshPro passwordWorldText;
 
     public static HiddenSecretsManager instance;
 
