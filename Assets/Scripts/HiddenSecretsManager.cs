@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class HiddenSecretsManager : MonoBehaviour
 {
     [Header("Text")]
-    [SerializeField] private TextMeshPro secretsFoundText;
-    [SerializeField] private TextMeshPro passwordUIText;
-    [SerializeField] private TextMeshPro passwordWorldText;
+    [SerializeField] private TextMeshProUGUI secretsFoundText;
+    [SerializeField] private TextMeshProUGUI passwordUIText;
+    [SerializeField] private TextMeshProUGUI passwordWorldText;
 
     public static HiddenSecretsManager instance;
 
