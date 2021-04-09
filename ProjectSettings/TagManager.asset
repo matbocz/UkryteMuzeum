@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MuseumSecret
+  - HiddenSecret
   layers:
   - Default
   - TransparentFX
