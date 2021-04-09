@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class SecretPickup : MonoBehaviour
 {
-    [SerializeField] GameObject secretPanel;
+    [Header("Panel")]
+    [SerializeField] private GameObject secretPanel;
+    [Header("Password (only for Hidden Secrets)")]
+    [SerializeField] private char character1;
+    [SerializeField] private int index1;
+    [Space(10)]
+    [SerializeField] private char character2;
+    [SerializeField] private int index2;
+
+    private bool isFound = false;
 
     private void Start()
     {
         secretPanel.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (other.gameObject.tag == "Player" && gameObject.tag != "MuseumSecret")
+        if (collider.gameObject.tag == "Player" && gameObject.tag != "MuseumSecret")
         {
-            Debug.Log("Secret!");
-
             OpenSecretPanel();
+
+            if (gameObject.tag == "HiddenSecret" && isFound == false)
+            {
+                FindSecret();
+            }
         }
     }
 
@@ -27,6 +39,16 @@ public class SecretPickup : MonoBehaviour
 
         StopTime();
         ShowCursor();
+    }
+
+    private void FindSecret()
+    {
+        HiddenSecretsManager.instance.AddSecretFound();
+
+        HiddenSecretsManager.instance.AddPasswordElement(character1, index1);
+        HiddenSecretsManager.instance.AddPasswordElement(character2, index2);
+
+        isFound = true;
     }
 
     private void StopTime()
