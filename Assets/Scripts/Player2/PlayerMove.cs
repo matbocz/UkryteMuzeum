@@ -1,33 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float speed = 4f;
-    [SerializeField] float sprintMultiplier = 2f;
-    [SerializeField] float gravity = -10f;
+    [SerializeField] private float movementSpeed = 4f;
+    [SerializeField] private float sprintMultiplier = 2f;
+    [SerializeField] private float gravity = -10f;
 
     [Header("Ground detection")]
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask groundMask;
-    [SerializeField] float groundDistance = 0.5f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float groundDistance = 0.5f;
 
     [Header("Key bindings")]
-    [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
+    [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
 
-    float x;
-    float z;
+    private float x;
+    private float z;
 
-    bool isGrounded;
+    private bool isGrounded;
 
-    CharacterController characterController;
+    private CharacterController characterController;
 
-    Vector3 moveDirection;
-    Vector3 velocity;
+    private Vector3 moveDirection;
+    private Vector3 velocity;
 
-    void Start()
+    private void Start()
     {
         SetCharacterController();
     }
@@ -37,7 +38,7 @@ public class PlayerMove : MonoBehaviour
         characterController = gameObject.GetComponent(typeof(CharacterController)) as CharacterController;
     }
 
-    void Update()
+    private void Update()
     {
         DetectGround();
 
@@ -70,11 +71,11 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKey(sprintKey))
         {
-            characterController.Move(moveDirection * speed * sprintMultiplier * Time.deltaTime);
+            characterController.Move(moveDirection * movementSpeed * sprintMultiplier * Time.deltaTime);
         }
         else
         {
-            characterController.Move(moveDirection * speed * Time.deltaTime);
+            characterController.Move(moveDirection * movementSpeed * Time.deltaTime);
         }
 
     }
@@ -83,5 +84,10 @@ public class PlayerMove : MonoBehaviour
     {
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+    }
+
+    public void ChangeMovementSpeed(Slider slider)
+    {
+        movementSpeed = slider.value;
     }
 }
