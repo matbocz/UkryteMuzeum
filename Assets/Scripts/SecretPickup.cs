@@ -20,18 +20,18 @@ public class SecretPickup : MonoBehaviour
         secretPanel.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.tag == "Player" && gameObject.tag != "MuseumSecret")
-        {
-            OpenSecretPanel();
+    //private void OnTriggerEnter(Collider collider)
+    //{
+    //    if (collider.gameObject.tag == "Player" && gameObject.tag != "MuseumSecret")
+    //    {
+    //        OpenSecretPanel();
 
-            if (gameObject.tag == "HiddenSecret" && isFound == false)
-            {
-                FindSecret();
-            }
-        }
-    }
+    //        if (gameObject.tag == "HiddenSecret" && isFound == false)
+    //        {
+    //            FindSecret();
+    //        }
+    //    }
+    //}
 
     public void OpenSecretPanel()
     {
@@ -41,14 +41,17 @@ public class SecretPickup : MonoBehaviour
         ShowCursor();
     }
 
-    private void FindSecret()
+    public void FindSecret()
     {
-        HiddenSecretsManager.instance.AddSecretFound();
+        if (isFound == false)
+        {
+            HiddenSecretsManager.instance.AddSecretFound();
 
-        HiddenSecretsManager.instance.AddPasswordElement(character1, index1);
-        HiddenSecretsManager.instance.AddPasswordElement(character2, index2);
+            HiddenSecretsManager.instance.AddPasswordElement(character1, index1);
+            HiddenSecretsManager.instance.AddPasswordElement(character2, index2);
 
-        isFound = true;
+            isFound = true;
+        }
     }
 
     private void StopTime()

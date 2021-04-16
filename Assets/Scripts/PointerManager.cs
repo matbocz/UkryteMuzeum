@@ -58,5 +58,11 @@ public class PointerManager : MonoBehaviour
             SecretPickup secretPickup = raycastHit.transform.GetComponent<SecretPickup>();
             secretPickup.OpenSecretPanel();
         }
+        else if (raycastHit.transform.tag == "HiddenSecret")
+        {
+            SecretPickup secretPickup = raycastHit.transform.GetComponent<SecretPickup>();
+            secretPickup.FindSecret();
+            secretPickup.OpenSecretPanel();
+        }
     }
 }
