@@ -7,12 +7,16 @@ using UnityEngine.UI;
 public class PointerManager : MonoBehaviour
 {
     [Header("Pointer")]
-    [SerializeField] Image pointerImage;
-    [SerializeField] Sprite defaultPointer;
-    [SerializeField] Sprite selectPointer;
+    [SerializeField] private Image pointerImage;
+    [SerializeField] private Sprite defaultPointer;
+    [SerializeField] private Sprite selectPointer;
+
+    [Space(10)]
+    [SerializeField] private Vector3 defaultPointerScale = new Vector3(1f, 1f, 1f);
+    [SerializeField] private Vector3 selectPointerScale = new Vector3(2f, 2f, 2f);
 
     [Header("Raycast")]
-    [SerializeField] float raycastRange = 100f;
+    [SerializeField] private float raycastRange = 2f;
 
     RaycastHit raycastHit;
 
@@ -22,12 +26,16 @@ public class PointerManager : MonoBehaviour
 
         if (raycastHit.transform != null)
         {
-            SetPointer();
+            SetSelectPointer();
 
             if (Input.GetMouseButtonDown(0))
             {
                 Click();
             }
+        }
+        else
+        {
+            SetDefaultPointer();
         }
     }
 
@@ -37,15 +45,12 @@ public class PointerManager : MonoBehaviour
         Physics.Raycast(raycast, out raycastHit, raycastRange);
     }
 
-    private void SetPointer()
+    private void SetSelectPointer()
     {
-        if (raycastHit.transform.tag == "MuseumSecret")
+        if (raycastHit.transform.tag == "MuseumSecret" || raycastHit.transform.tag == "HiddenSecret")
         {
             pointerImage.sprite = selectPointer;
-        }
-        else
-        {
-            pointerImage.sprite = defaultPointer;
+            pointerImage.transform.localScale = selectPointerScale;
         }
     }
 
@@ -64,5 +69,11 @@ public class PointerManager : MonoBehaviour
             secretPickup.FindSecret();
             secretPickup.OpenSecretPanel();
         }
+    }
+
+    private void SetDefaultPointer()
+    {
+        pointerImage.sprite = defaultPointer;
+        pointerImage.transform.localScale = defaultPointerScale;
     }
 }
