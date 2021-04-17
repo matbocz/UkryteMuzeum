@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 288882241176330504}
   - component: {fileID: 288882241176330519}
   - component: {fileID: 288882241176330518}
+  - component: {fileID: 956249531163963351}
   m_Layer: 0
   m_Name: Pointer Canvas
   m_TagString: Untagged
@@ -99,6 +100,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &956249531163963351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288882241176330516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5336c4a59d5876549afaf1556884d3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointerImage: {fileID: 288882241352318804}
+  defaultPointer: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  selectPointer: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  defaultPointerScale: {x: 1, y: 1, z: 1}
+  selectPointerScale: {x: 2, y: 2, z: 2}
+  raycastRange: 2
 --- !u!1 &288882241352318802
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,9 +129,8 @@ GameObject:
   - component: {fileID: 288882241352318803}
   - component: {fileID: 288882241352318805}
   - component: {fileID: 288882241352318804}
-  - component: {fileID: 288882242130725882}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: PointerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,19 +192,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &288882242130725882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288882241352318802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5336c4a59d5876549afaf1556884d3a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointerImage: {fileID: 288882241352318804}
-  defaultPointer: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  selectPointer: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  raycastRange: 100
