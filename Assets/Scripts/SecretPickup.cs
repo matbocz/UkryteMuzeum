@@ -6,9 +6,11 @@ public class SecretPickup : MonoBehaviour
 {
     [Header("Panel")]
     [SerializeField] private GameObject secretPanel;
+
     [Header("Password (only for Hidden Secrets)")]
     [SerializeField] private char character1;
     [SerializeField] private int index1;
+
     [Space(10)]
     [SerializeField] private char character2;
     [SerializeField] private int index2;
@@ -37,8 +39,16 @@ public class SecretPickup : MonoBehaviour
     {
         secretPanel.SetActive(true);
 
-        StopTime();
-        ShowCursor();
+        GameStateManager.instance.StopTime();
+        GameStateManager.instance.ShowCursor();
+    }
+
+    public void CloseSecretPanel()
+    {
+        secretPanel.SetActive(false);
+
+        GameStateManager.instance.StartTime();
+        GameStateManager.instance.HideCursor();
     }
 
     public void FindSecret()
@@ -52,39 +62,5 @@ public class SecretPickup : MonoBehaviour
 
             isFound = true;
         }
-    }
-
-    private void StopTime()
-    {
-        Camera.main.GetComponent<PlayerLook>().enabled = false;
-
-        Time.timeScale = 0;
-    }
-
-    private void ShowCursor()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    public void CloseSecretPanel()
-    {
-        secretPanel.SetActive(false);
-
-        StartTime();
-        HideCursor();
-    }
-
-    private void StartTime()
-    {
-        Camera.main.GetComponent<PlayerLook>().enabled = true;
-
-        Time.timeScale = 1;
-    }
-
-    private void HideCursor()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 }
