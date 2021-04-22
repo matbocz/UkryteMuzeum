@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PointerManager : MonoBehaviour
 {
@@ -26,11 +27,14 @@ public class PointerManager : MonoBehaviour
 
         if (raycastHit.transform != null)
         {
-            SetSelectPointer();
-
-            if (Input.GetMouseButtonDown(0))
+            if (raycastHit.transform.tag == "MuseumSecret" || raycastHit.transform.tag == "HiddenSecret" || raycastHit.transform.tag == "StartQuiz")
             {
-                Click();
+                SetSelectPointer();
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Click();
+                }
             }
         }
         else
@@ -47,11 +51,9 @@ public class PointerManager : MonoBehaviour
 
     private void SetSelectPointer()
     {
-        if (raycastHit.transform.tag == "MuseumSecret" || raycastHit.transform.tag == "HiddenSecret")
-        {
-            pointerImage.sprite = selectPointer;
-            pointerImage.transform.localScale = selectPointerScale;
-        }
+
+        pointerImage.sprite = selectPointer;
+        pointerImage.transform.localScale = selectPointerScale;
     }
 
     private void Click()
@@ -68,6 +70,10 @@ public class PointerManager : MonoBehaviour
             SecretPickup secretPickup = raycastHit.transform.GetComponent<SecretPickup>();
             secretPickup.FindSecret();
             secretPickup.OpenSecretPanel();
+        }
+        else if (raycastHit.transform.tag == "StartQuiz")
+        {
+            SceneManager.LoadScene(1);
         }
     }
 

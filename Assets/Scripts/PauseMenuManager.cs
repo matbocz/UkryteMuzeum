@@ -28,53 +28,22 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
-    public void ResumeGame()
-    {
-        StartTime();
-        HideCursor();
-
-        pauseMenuPanel.SetActive(false);
-        isPaused = false;
-    }
-
-    private void StartTime()
-    {
-        Camera.main.GetComponent<PlayerLook>().enabled = true;
-
-        Time.timeScale = 1;
-    }
-
-    private void HideCursor()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     private void PauseGame()
     {
-        StopTime();
-        ShowCursor();
+        GameStateManager.instance.StopTime();
+        GameStateManager.instance.ShowCursor();
 
         pauseMenuPanel.SetActive(true);
         isPaused = true;
     }
 
-    private void StopTime()
+    public void ResumeGame()
     {
-        Camera.main.GetComponent<PlayerLook>().enabled = false;
+        GameStateManager.instance.StartTime();
+        GameStateManager.instance.HideCursor();
 
-        Time.timeScale = 0;
-    }
-
-    private void ShowCursor()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
+        pauseMenuPanel.SetActive(false);
+        isPaused = false;
     }
 
     public void OpenOptions()
@@ -87,5 +56,10 @@ public class PauseMenuManager : MonoBehaviour
     {
         pauseMenuPanel.SetActive(true);
         optionsPanel.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
