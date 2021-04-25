@@ -22,19 +22,6 @@ public class SecretPickup : MonoBehaviour
         secretPanel.SetActive(false);
     }
 
-    //private void OnTriggerEnter(Collider collider)
-    //{
-    //    if (collider.gameObject.tag == "Player" && gameObject.tag != "MuseumSecret")
-    //    {
-    //        OpenSecretPanel();
-
-    //        if (gameObject.tag == "HiddenSecret" && isFound == false)
-    //        {
-    //            FindSecret();
-    //        }
-    //    }
-    //}
-
     public void OpenSecretPanel()
     {
         secretPanel.SetActive(true);
