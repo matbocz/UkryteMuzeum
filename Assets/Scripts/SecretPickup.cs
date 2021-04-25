@@ -41,6 +41,8 @@ public class SecretPickup : MonoBehaviour
 
         GameStateManager.instance.StopTime();
         GameStateManager.instance.ShowCursor();
+
+        GameStateManager.instance.gameIsPaused = true;
     }
 
     public void CloseSecretPanel()
@@ -49,6 +51,8 @@ public class SecretPickup : MonoBehaviour
 
         GameStateManager.instance.StartTime();
         GameStateManager.instance.HideCursor();
+
+        GameStateManager.instance.gameIsPaused = false;
     }
 
     public void FindSecret()

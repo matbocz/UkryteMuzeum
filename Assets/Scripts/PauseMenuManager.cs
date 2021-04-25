@@ -9,8 +9,6 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private GameObject optionsPanel;
 
-    private bool isPaused = false;
-
     private void Start()
     {
         pauseMenuPanel.SetActive(false);
@@ -19,12 +17,17 @@ public class PauseMenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (isPaused == false)
+        if (GameStateManager.instance.gameIsPaused == false)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                PauseGame();
-            }
+            HandleEscapeKeyDown();
+        }
+    }
+
+    private void HandleEscapeKeyDown()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
         }
     }
 
@@ -32,18 +35,18 @@ public class PauseMenuManager : MonoBehaviour
     {
         GameStateManager.instance.StopTime();
         GameStateManager.instance.ShowCursor();
+        GameStateManager.instance.gameIsPaused = true;
 
         pauseMenuPanel.SetActive(true);
-        isPaused = true;
     }
 
     public void ResumeGame()
     {
         GameStateManager.instance.StartTime();
         GameStateManager.instance.HideCursor();
+        GameStateManager.instance.gameIsPaused = false;
 
         pauseMenuPanel.SetActive(false);
-        isPaused = false;
     }
 
     public void OpenOptions()
