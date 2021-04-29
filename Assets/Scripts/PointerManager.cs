@@ -83,7 +83,7 @@ public class PointerManager : MonoBehaviour
         }
         else if (raycastHit.transform.tag == "StartQuiz")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
