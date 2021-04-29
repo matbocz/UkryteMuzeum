@@ -22,25 +22,14 @@ public class SecretPickup : MonoBehaviour
         secretPanel.SetActive(false);
     }
 
-    //private void OnTriggerEnter(Collider collider)
-    //{
-    //    if (collider.gameObject.tag == "Player" && gameObject.tag != "MuseumSecret")
-    //    {
-    //        OpenSecretPanel();
-
-    //        if (gameObject.tag == "HiddenSecret" && isFound == false)
-    //        {
-    //            FindSecret();
-    //        }
-    //    }
-    //}
-
     public void OpenSecretPanel()
     {
         secretPanel.SetActive(true);
 
         GameStateManager.instance.StopTime();
         GameStateManager.instance.ShowCursor();
+
+        GameStateManager.instance.gameIsPaused = true;
     }
 
     public void CloseSecretPanel()
@@ -49,6 +38,8 @@ public class SecretPickup : MonoBehaviour
 
         GameStateManager.instance.StartTime();
         GameStateManager.instance.HideCursor();
+
+        GameStateManager.instance.gameIsPaused = false;
     }
 
     public void FindSecret()

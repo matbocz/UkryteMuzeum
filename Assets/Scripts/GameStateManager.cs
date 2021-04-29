@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    public bool gameIsPaused = false;
+
     public static GameStateManager instance;
 
     private void Awake()
