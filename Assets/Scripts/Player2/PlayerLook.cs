@@ -14,17 +14,6 @@ public class PlayerLook : MonoBehaviour
 
     private float xRotation = 0f;
 
-    private void Start()
-    {
-        HideCursor();
-    }
-
-    private void HideCursor()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     private void Update()
     {
         HandleInput();

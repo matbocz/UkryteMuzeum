@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PointerManager : MonoBehaviour
@@ -29,17 +30,14 @@ public class PointerManager : MonoBehaviour
         {
             if (raycastHit.transform.tag == "MuseumSecret" || raycastHit.transform.tag == "HiddenSecret" || raycastHit.transform.tag == "StartQuiz")
             {
-                SetSelectPointer();
+                SetSelectPointerImage();
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Click();
-                }
+                HandleLeftMouseClick();
             }
         }
         else
         {
-            SetDefaultPointer();
+            SetDefaultPointerImage();
         }
     }
 
@@ -49,35 +47,47 @@ public class PointerManager : MonoBehaviour
         Physics.Raycast(raycast, out raycastHit, raycastRange);
     }
 
-    private void SetSelectPointer()
+    private void SetSelectPointerImage()
     {
-
         pointerImage.sprite = selectPointer;
         pointerImage.transform.localScale = selectPointerScale;
     }
 
-    private void Click()
+    private void HandleLeftMouseClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                ClickOnObject();
+            }
+        }
+    }
+
+    private void ClickOnObject()
     {
         Debug.Log("Name: " + raycastHit.transform.name + "\nTag: " + raycastHit.transform.tag);
 
         if (raycastHit.transform.tag == "MuseumSecret")
         {
             SecretPickup secretPickup = raycastHit.transform.GetComponent<SecretPickup>();
+
             secretPickup.OpenSecretPanel();
         }
         else if (raycastHit.transform.tag == "HiddenSecret")
         {
             SecretPickup secretPickup = raycastHit.transform.GetComponent<SecretPickup>();
-            secretPickup.FindSecret();
+
             secretPickup.OpenSecretPanel();
+            secretPickup.FindSecret();
         }
         else if (raycastHit.transform.tag == "StartQuiz")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
-    private void SetDefaultPointer()
+    private void SetDefaultPointerImage()
     {
         pointerImage.sprite = defaultPointer;
         pointerImage.transform.localScale = defaultPointerScale;

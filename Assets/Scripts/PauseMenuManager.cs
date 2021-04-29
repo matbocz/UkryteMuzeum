@@ -2,29 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
-    [Header("Panel")]
-    [SerializeField] private GameObject pauseMenuPanel;
+    [Header("Panels")]
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
-
-    private bool isPaused = false;
+    [SerializeField] private GameObject mouseOptionsPanel;
+    [SerializeField] private GameObject movementOptionsPanel;
+    [SerializeField] private GameObject controlOptionsPanel;
+    [SerializeField] private GameObject confirmationPanel;
 
     private void Start()
     {
-        pauseMenuPanel.SetActive(false);
-        optionsPanel.SetActive(false);
+        CloseAllPanels();
     }
 
     private void Update()
     {
-        if (isPaused == false)
+        if (GameStateManager.instance.gameIsPaused == false)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                PauseGame();
-            }
+            HandleEscapeKeyDown();
+        }
+    }
+
+    private void HandleEscapeKeyDown()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
         }
     }
 
@@ -32,34 +39,73 @@ public class PauseMenuManager : MonoBehaviour
     {
         GameStateManager.instance.StopTime();
         GameStateManager.instance.ShowCursor();
+        GameStateManager.instance.gameIsPaused = true;
 
-        pauseMenuPanel.SetActive(true);
-        isPaused = true;
+        ShowPausePanel();
     }
 
     public void ResumeGame()
     {
         GameStateManager.instance.StartTime();
         GameStateManager.instance.HideCursor();
+        GameStateManager.instance.gameIsPaused = false;
 
-        pauseMenuPanel.SetActive(false);
-        isPaused = false;
+        CloseAllPanels();
     }
 
-    public void OpenOptions()
+    public void QuitToStartMenu()
     {
-        pauseMenuPanel.SetActive(false);
-        optionsPanel.SetActive(true);
-    }
-
-    public void CloseOptions()
-    {
-        pauseMenuPanel.SetActive(true);
-        optionsPanel.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ShowPausePanel()
+    {
+        CloseAllPanels();
+        pausePanel.SetActive(true);
+    }
+
+    public void ShowOptionsPanel()
+    {
+        CloseAllPanels();
+        optionsPanel.SetActive(true);
+    }
+
+    public void ShowMouseOptionsPanel()
+    {
+        CloseAllPanels();
+        mouseOptionsPanel.SetActive(true);
+    }
+
+    public void ShowMovementOptionsPanel()
+    {
+        CloseAllPanels();
+        movementOptionsPanel.SetActive(true);
+    }
+
+    public void ShowControlOptionsPanel()
+    {
+        CloseAllPanels();
+        controlOptionsPanel.SetActive(true);
+    }
+
+    public void ShowConfirmationPanel()
+    {
+        CloseAllPanels();
+        confirmationPanel.SetActive(true);
+    }
+
+    private void CloseAllPanels()
+    {
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        mouseOptionsPanel.SetActive(false);
+        movementOptionsPanel.SetActive(false);
+        controlOptionsPanel.SetActive(false);
+        confirmationPanel.SetActive(false);
     }
 }

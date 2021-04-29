@@ -13,6 +13,10 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private Button correctButton;
     [SerializeField] private Button nextQuestionButton;
 
+    [Header("Button colors")]
+    [SerializeField] private Color goodButtonColor = Color.green;
+    [SerializeField] private Color badButtonColor = Color.red;
+
     private void Start()
     {
         nextQuestionButton.gameObject.SetActive(false);
@@ -49,21 +53,17 @@ public class QuestionManager : MonoBehaviour
 
     private void HandleGoodAnswer(GameObject clickedButton, ColorBlock clickedButtonColors)
     {
-        Debug.Log("Correct");
-
-        QuizManager.instance.IncreasePoints();
-
-        clickedButtonColors.normalColor = Color.green;
+        clickedButtonColors.normalColor = goodButtonColor;
 
         clickedButton.GetComponent<Button>().colors = clickedButtonColors;
+
+        QuizManager.instance.IncreasePoints();
     }
 
     private void HandleBadAnswer(GameObject clickedButton, ColorBlock clickedButtonColors, ColorBlock correctButtonColors)
     {
-        Debug.Log("Incorrect");
-
-        clickedButtonColors.normalColor = Color.red;
-        correctButtonColors.normalColor = Color.green;
+        clickedButtonColors.normalColor = badButtonColor;
+        correctButtonColors.normalColor = goodButtonColor;
 
         clickedButton.GetComponent<Button>().colors = clickedButtonColors;
         correctButton.colors = correctButtonColors;
