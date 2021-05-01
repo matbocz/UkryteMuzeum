@@ -8202,8 +8202,8 @@ RectTransform:
   m_Father: {fileID: 1637847970}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8822,6 +8822,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8f00ee91d6e1654e926286b327e7157, type: 3}
+--- !u!114 &850918496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7285679697544651008, guid: f8f00ee91d6e1654e926286b327e7157,
+    type: 3}
+  m_PrefabInstance: {fileID: 850918495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdfc623625f3774987f0a1c9315e9f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &850918497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7285679695972927220, guid: f8f00ee91d6e1654e926286b327e7157,
+    type: 3}
+  m_PrefabInstance: {fileID: 850918495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e0cbb867b34454895958a7c22407e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &855731624
 GameObject:
   m_ObjectHideFlags: 0
@@ -9316,13 +9340,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 2031441460}
   m_HandleRect: {fileID: 824297469}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 2
+  m_MaxValue: 6
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 850918496}
+        m_MethodName: ChangeMovementSpeed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 939947842}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &965812039
 GameObject:
   m_ObjectHideFlags: 0
@@ -9535,13 +9570,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 615781137}
   m_HandleRect: {fileID: 1569337281}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 20
+  m_MaxValue: 220
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 80
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 850918497}
+        m_MethodName: ChangeSensitivityX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 966518713}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &970504736
 GameObject:
   m_ObjectHideFlags: 0
@@ -15973,13 +16019,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 1523748442}
   m_HandleRect: {fileID: 1748346019}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 20
+  m_MaxValue: 220
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 80
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 850918497}
+        m_MethodName: ChangeSensitivityY
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1680830439}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1688629676
 GameObject:
   m_ObjectHideFlags: 0
@@ -19109,7 +19166,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
