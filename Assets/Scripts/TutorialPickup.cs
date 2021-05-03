@@ -27,7 +27,6 @@ public class TutorialPickup : MonoBehaviour
 
         GameStateManager.instance.StopTime();
         GameStateManager.instance.ShowCursor();
-
         GameStateManager.instance.gameIsPaused = true;
     }
 
@@ -37,7 +36,6 @@ public class TutorialPickup : MonoBehaviour
 
         GameStateManager.instance.StartTime();
         GameStateManager.instance.HideCursor();
-
         GameStateManager.instance.gameIsPaused = false;
 
         Destroy(gameObject);
