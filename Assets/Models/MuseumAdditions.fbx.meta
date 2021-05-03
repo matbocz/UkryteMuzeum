@@ -3,77 +3,7 @@ guid: a663da7e5635e37479935e9b11e9eddc
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Braniewo
-    second: {fileID: 2100000, guid: c63e584502524c547aeacf353b35737a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dzialdowo
-    second: {fileID: 2100000, guid: 7b524960954e9a64bac3f57152920e27, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Elblag
-    second: {fileID: 2100000, guid: c68586bc996e55f439c78030b45e91a6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Frombork
-    second: {fileID: 2100000, guid: ba9f9122e6415ae40807f41cdf6d1b68, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grunwald
-    second: {fileID: 2100000, guid: 0a0669ca75649ca44898f55d7c64744a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ketrzyn
-    second: {fileID: 2100000, guid: 0e5e70fbd6c6fd0448c7a668b7ca4dc2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Legend
-    second: {fileID: 2100000, guid: 54c7f7014ce2cc54cb718c06965fb56e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LetteringColor
-    second: {fileID: 2100000, guid: c2fe1250cd8457a4382ea405abcfe31d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MapWarmiaIMazury
-    second: {fileID: 2100000, guid: 14a89b1cae1fcd64191b7ddb839d952d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 3b6687f102f60684ca47c86b48dd0b06, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Olsztyn
-    second: {fileID: 2100000, guid: 002c07cf59b40ff4a921fdaf96875189, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ostoda
-    second: {fileID: 2100000, guid: e4009e4fa433d3148b67a3481a2a8d86, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wall
-    second: {fileID: 2100000, guid: 3bd3bf169fab5aa4ba9219edb91bdd5c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wegorzewo
-    second: {fileID: 2100000, guid: 7b855bd548e2c02419ea3700a8eb6ceb, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

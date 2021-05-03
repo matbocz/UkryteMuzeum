@@ -1577,6 +1577,8 @@ MonoBehaviour:
   - {fileID: 762065910}
   correctButton: {fileID: 108374719}
   nextQuestionButton: {fileID: 283216370}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &165704323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3306,6 +3308,8 @@ MonoBehaviour:
   - {fileID: 824872533}
   correctButton: {fileID: 824872533}
   nextQuestionButton: {fileID: 64543939}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &587631738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8009,6 +8013,8 @@ MonoBehaviour:
   - {fileID: 18216606}
   correctButton: {fileID: 1714130616}
   nextQuestionButton: {fileID: 1879978167}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1171198056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8339,6 +8345,8 @@ MonoBehaviour:
   - {fileID: 91114914}
   correctButton: {fileID: 1674772517}
   nextQuestionButton: {fileID: 1897496830}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1266442357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8565,6 +8573,8 @@ MonoBehaviour:
   - {fileID: 912609146}
   correctButton: {fileID: 525619835}
   nextQuestionButton: {fileID: 1162464601}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1294087665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9025,6 +9035,8 @@ MonoBehaviour:
   - {fileID: 928194558}
   correctButton: {fileID: 928194558}
   nextQuestionButton: {fileID: 2133840767}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1372715850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10971,6 +10983,8 @@ MonoBehaviour:
   - {fileID: 863014461}
   correctButton: {fileID: 1411743630}
   nextQuestionButton: {fileID: 1067614706}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1710162735
 GameObject:
   m_ObjectHideFlags: 0
@@ -11430,6 +11444,8 @@ MonoBehaviour:
   - {fileID: 1955087222}
   correctButton: {fileID: 131885263}
   nextQuestionButton: {fileID: 270810862}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1845604499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13075,6 +13091,8 @@ MonoBehaviour:
   - {fileID: 913214714}
   correctButton: {fileID: 913214714}
   nextQuestionButton: {fileID: 695778818}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &2054527974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13171,6 +13189,8 @@ MonoBehaviour:
   - {fileID: 484728345}
   correctButton: {fileID: 535314165}
   nextQuestionButton: {fileID: 823116809}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &2076363873
 MonoBehaviour:
   m_ObjectHideFlags: 0
