@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Gate
-    second: {fileID: 2100000, guid: d1c4358cdc896934c9be8a3dd14ca018, type: 2}
+      name: Basic
+    second: {fileID: 2100000, guid: 2afa70b428103024cbca16f68578fa7b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
