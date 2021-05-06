@@ -85,6 +85,10 @@ public class PointerManager : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+        else if (raycastHit.transform.tag == "PasswordClickObject")
+        {
+            TutorialStateManager.instance.OpenPasswordInfoPanel();
+        }
     }
 
     private void SetDefaultPointerImage()
