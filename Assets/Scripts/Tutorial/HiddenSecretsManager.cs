@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class HiddenSecretsManager : MonoBehaviour
 {
     [Header("Text")]
-    [SerializeField] private TextMeshProUGUI secretsFoundText;
-    [SerializeField] private TextMeshProUGUI passwordUIText;
-    [SerializeField] private TextMeshProUGUI passwordWorldText;
+    [SerializeField] private Text secretsFoundUIText;
+    [SerializeField] private Text passwordUIText;
+    [SerializeField] private Text infoUIText;
+
+    [Space(10)]
+    [SerializeField] private Text passwordWorldText;
 
     public static HiddenSecretsManager instance;
 
@@ -44,7 +47,13 @@ public class HiddenSecretsManager : MonoBehaviour
     {
         secretsFound += 1;
 
-        secretsFoundText.text = "Znalezione zabytki: " + secretsFound.ToString() + " / 4";
+        secretsFoundUIText.text = "Znalezione zabytki: " + secretsFound.ToString() + " / 4";
+
+        if (secretsFound == 4)
+        {
+            ShowInfoUIText();
+            TutorialStateManager.instance.ActivatePasswordClickObject();
+        }
     }
 
     public void AddPasswordElement(char character, int index)
@@ -58,5 +67,35 @@ public class HiddenSecretsManager : MonoBehaviour
     {
         passwordUIText.text = string.Join(" ", password);
         passwordWorldText.text = string.Join(" ", password);
+    }
+
+    public void ShowSecretsFoundUIText()
+    {
+        secretsFoundUIText.gameObject.SetActive(true);
+    }
+
+    public void CloseSecretsFoundUIText()
+    {
+        secretsFoundUIText.gameObject.SetActive(false);
+    }
+
+    public void ShowPasswordUIText()
+    {
+        passwordUIText.gameObject.SetActive(true);
+    }
+
+    public void ClosePasswordUIText()
+    {
+        passwordUIText.gameObject.SetActive(false);
+    }
+
+    public void ShowInfoUIText()
+    {
+        infoUIText.gameObject.SetActive(true);
+    }
+
+    public void CloseInfoUIText()
+    {
+        infoUIText.gameObject.SetActive(false);
     }
 }
