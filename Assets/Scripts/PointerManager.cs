@@ -28,7 +28,7 @@ public class PointerManager : MonoBehaviour
 
         if (raycastHit.transform != null)
         {
-            if (raycastHit.transform.tag == "MuseumSecret" || raycastHit.transform.tag == "HiddenSecret" || raycastHit.transform.tag == "StartQuiz")
+            if (raycastHit.transform.tag == "MuseumSecret" || raycastHit.transform.tag == "HiddenSecret" || raycastHit.transform.tag == "StartQuiz" || raycastHit.transform.tag == "PasswordClickObject")
             {
                 SetSelectPointerImage();
 
