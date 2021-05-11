@@ -12,7 +12,7 @@ public class HiddenSecretsManager : MonoBehaviour
     [SerializeField] private Text infoUIText;
 
     [Space(10)]
-    [SerializeField] private Text passwordWorldText;
+    [SerializeField] private TextMeshProUGUI passwordWorldText;
 
     public static HiddenSecretsManager instance;
 
