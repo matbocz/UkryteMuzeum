@@ -7680,7 +7680,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "C. ZWYCI\u0118STO MADONNY NAD POKUS\u0104 TEOG \u015AWIATA"
+  m_Text: "C. ZWYCI\u0118STO MADONNY NAD POKUS\u0104 TEGO \u015AWIATA"
 --- !u!222 &1141965979
 CanvasRenderer:
   m_ObjectHideFlags: 0
