@@ -26,6 +26,9 @@ public class TutorialStateManager : MonoBehaviour
     [SerializeField] private GameObject tutorialEndOverlay;
     [SerializeField] private GameObject quizDoor;
 
+    private GameObject[] tutorialOverlays = new GameObject[6];
+    private GameObject[] activeTutorialOverlays = new GameObject[3];
+
     public static TutorialStateManager instance;
 
     private void Awake()
@@ -155,5 +158,50 @@ public class TutorialStateManager : MonoBehaviour
 
         // Wznów grę
         GameStateManager.instance.StartGame();
+    }
+
+    public void HideActiveTutorialOverlays()
+    {
+        // Zapisz wszystkie overlaye do tablicy: tutorialOverlays
+        GetAllTutorialOverlays();
+
+        // Znajdź wszystkie aktywne overlaye i zapisz je do tablicy: activeTutorialOverlays
+        int i = 0;
+        foreach (GameObject tutorialOverlay in tutorialOverlays)
+        {
+            if (tutorialOverlay.activeSelf == true)
+            {
+                activeTutorialOverlays[i] = tutorialOverlay;
+                tutorialOverlay.SetActive(false);
+
+                i++;
+            }
+        }
+    }
+
+    private void GetAllTutorialOverlays()
+    {
+        tutorialOverlays[0] = tutorialOverlay1;
+        tutorialOverlays[1] = tutorialOverlay2;
+        tutorialOverlays[2] = tutorialEndOverlay;
+        tutorialOverlays[3] = HiddenSecretsManager.instance.secretsFoundUIText.gameObject;
+        tutorialOverlays[4] = HiddenSecretsManager.instance.passwordUIText.gameObject;
+        tutorialOverlays[5] = HiddenSecretsManager.instance.infoUIText.gameObject;
+    }
+
+    public void ShowActiveTutorialOverlays()
+    {
+        // Aktywuj wszystkie overlaye zapisane w tablicy: activeTutorialOverlays
+        foreach (GameObject activeTutorialOverlay in activeTutorialOverlays)
+        {
+            try
+            {
+                activeTutorialOverlay.SetActive(true);
+            }
+            catch
+            {
+                continue;
+            }
+        }
     }
 }

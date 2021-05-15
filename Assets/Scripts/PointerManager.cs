@@ -66,7 +66,7 @@ public class PointerManager : MonoBehaviour
 
     private void ClickOnObject()
     {
-        Debug.Log("Name: " + raycastHit.transform.name + "\nTag: " + raycastHit.transform.tag);
+        TutorialStateManager.instance.HideActiveTutorialOverlays();
 
         if (raycastHit.transform.tag == "MuseumSecret")
         {
