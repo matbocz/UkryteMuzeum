@@ -13,9 +13,9 @@ public class TutorialPickup : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             OpenTutorialPanel();
-
             Destroy(gameObject);
 
+            TutorialStateManager.instance.HideActiveTutorialOverlays();
             GameStateManager.instance.StopGame();
         }
     }

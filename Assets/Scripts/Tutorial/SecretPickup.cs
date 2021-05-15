@@ -26,20 +26,15 @@ public class SecretPickup : MonoBehaviour
     {
         secretPanel.SetActive(true);
 
-        GameStateManager.instance.StopTime();
-        GameStateManager.instance.ShowCursor();
-
-        GameStateManager.instance.gameIsPaused = true;
+        GameStateManager.instance.StopGame();
     }
 
     public void CloseSecretPanel()
     {
         secretPanel.SetActive(false);
 
-        GameStateManager.instance.StartTime();
-        GameStateManager.instance.HideCursor();
-
-        GameStateManager.instance.gameIsPaused = false;
+        TutorialStateManager.instance.ShowActiveTutorialOverlays();
+        GameStateManager.instance.StartGame();
     }
 
     public void FindSecret()
