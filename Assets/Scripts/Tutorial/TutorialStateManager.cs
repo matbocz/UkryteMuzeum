@@ -27,7 +27,7 @@ public class TutorialStateManager : MonoBehaviour
     [SerializeField] private GameObject quizDoor;
 
     private GameObject[] tutorialOverlays = new GameObject[6];
-    private GameObject[] activeTutorialOverlays = new GameObject[3];
+    private List<GameObject> activeTutorialOverlays = new List<GameObject>();
 
     public static TutorialStateManager instance;
 
@@ -162,19 +162,19 @@ public class TutorialStateManager : MonoBehaviour
 
     public void HideActiveTutorialOverlays()
     {
-        // Zapisz wszystkie overlaye do tablicy: tutorialOverlays
+        // Zapisz wszystkie overlaye do tablicy tutorialOverlays
         GetAllTutorialOverlays();
 
-        // Znajdź wszystkie aktywne overlaye i zapisz je do tablicy: activeTutorialOverlays
-        int i = 0;
+        // Usuń wszystkie overlaye z tablicy activeTutorialOverlays
+        activeTutorialOverlays.Clear();
+
+        // Znajdź wszystkie aktywne overlaye z tablicy tutorialOverlays i zapisz je do tablicy activeTutorialOverlays
         foreach (GameObject tutorialOverlay in tutorialOverlays)
         {
             if (tutorialOverlay.activeSelf == true)
             {
-                activeTutorialOverlays[i] = tutorialOverlay;
+                activeTutorialOverlays.Add(tutorialOverlay);
                 tutorialOverlay.SetActive(false);
-
-                i++;
             }
         }
     }
@@ -183,15 +183,15 @@ public class TutorialStateManager : MonoBehaviour
     {
         tutorialOverlays[0] = tutorialOverlay1;
         tutorialOverlays[1] = tutorialOverlay2;
-        tutorialOverlays[2] = tutorialEndOverlay;
-        tutorialOverlays[3] = HiddenSecretsManager.instance.secretsFoundUIText.gameObject;
-        tutorialOverlays[4] = HiddenSecretsManager.instance.passwordUIText.gameObject;
-        tutorialOverlays[5] = HiddenSecretsManager.instance.infoUIText.gameObject;
+        tutorialOverlays[2] = HiddenSecretsManager.instance.secretsFoundUIText.gameObject;
+        tutorialOverlays[3] = HiddenSecretsManager.instance.passwordUIText.gameObject;
+        tutorialOverlays[4] = HiddenSecretsManager.instance.infoUIText.gameObject;
+        tutorialOverlays[5] = tutorialEndOverlay;
     }
 
     public void ShowActiveTutorialOverlays()
     {
-        // Aktywuj wszystkie overlaye zapisane w tablicy: activeTutorialOverlays
+        // Aktywuj wszystkie overlaye zapisane w tablicy activeTutorialOverlays
         foreach (GameObject activeTutorialOverlay in activeTutorialOverlays)
         {
             try
