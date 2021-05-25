@@ -95,6 +95,7 @@ public class AudioStateManager : MonoBehaviour
             Debug.Log("Sound " + soundName + " not found!");
             return;
         }
+
         s.source.Play();
     }
 
@@ -106,6 +107,7 @@ public class AudioStateManager : MonoBehaviour
             Debug.Log("Sound " + soundName + " not found!");
             return;
         }
+
         s.source.Stop();
     }
 }
