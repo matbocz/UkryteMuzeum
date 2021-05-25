@@ -29,23 +29,33 @@ public class SecretPickup : MonoBehaviour
     {
         secretPanel.SetActive(true);
 
-        FindObjectOfType<AudioStateManager>().TurnDownMusic();
-        FindObjectOfType<AudioStateManager>().PlaySound("OpenBookSound");
-        FindObjectOfType<AudioStateManager>().PlaySound(voiceSoundName);
+        PlayBookOpenSounds();
 
         GameStateManager.instance.StopGame();
+    }
+
+    private void PlayBookOpenSounds()
+    {
+        FindObjectOfType<AudioStateManager>().TurnDownMusic();
+        FindObjectOfType<AudioStateManager>().PlaySound("BookOpen");
+        FindObjectOfType<AudioStateManager>().PlaySound(voiceSoundName);
     }
 
     public void CloseSecretPanel()
     {
         secretPanel.SetActive(false);
 
-        FindObjectOfType<AudioStateManager>().TurnUpMusic();
-        FindObjectOfType<AudioStateManager>().PlaySound("CloseBookSound");
-        FindObjectOfType<AudioStateManager>().StopSound(voiceSoundName);
+        PlayBookCloseSounds();
 
         TutorialStateManager.instance.ShowActiveTutorialOverlays();
         GameStateManager.instance.StartGame();
+    }
+
+    private void PlayBookCloseSounds()
+    {
+        FindObjectOfType<AudioStateManager>().TurnUpMusic();
+        FindObjectOfType<AudioStateManager>().PlaySound("BookClose");
+        FindObjectOfType<AudioStateManager>().StopSound(voiceSoundName);
     }
 
     public void FindSecret()
