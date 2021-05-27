@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -26,18 +23,20 @@ public class PointerManager : MonoBehaviour
     {
         SetRaycast();
 
+        SetDefaultPointerImage();
+
+        // Check if the ray hits any object
         if (raycastHit.transform != null)
         {
-            if (raycastHit.transform.tag == "MuseumSecret" || raycastHit.transform.tag == "HiddenSecret" || raycastHit.transform.tag == "StartQuiz" || raycastHit.transform.tag == "PasswordClickObject")
+            // If the ray hits a specific object:
+            // - change cursor
+            // - let the user click on the object 
+            if (raycastHit.transform.CompareTag("MuseumSecret") || raycastHit.transform.CompareTag("HiddenSecret") || raycastHit.transform.CompareTag("StartQuiz") || raycastHit.transform.CompareTag("PasswordClickObject"))
             {
                 SetSelectPointerImage();
 
-                HandleLeftMouseClick();
+                HandleMouseClick();
             }
-        }
-        else
-        {
-            SetDefaultPointerImage();
         }
     }
 
@@ -47,47 +46,45 @@ public class PointerManager : MonoBehaviour
         Physics.Raycast(raycast, out raycastHit, raycastRange);
     }
 
-    private void SetSelectPointerImage()
+    private void HandleMouseClick()
     {
-        pointerImage.sprite = selectPointer;
-        pointerImage.transform.localScale = selectPointerScale;
-    }
-
-    private void HandleLeftMouseClick()
-    {
+        // Check if the user clicked the left mouse button
         if (Input.GetMouseButtonDown(0))
         {
+            // Check if the user has not clicked on the UI element
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                ClickOnObject();
+                ActivateObject();
             }
         }
     }
 
-    private void ClickOnObject()
+    private void ActivateObject()
     {
         TutorialStateManager.instance.HideActiveTutorialOverlays();
 
-        if (raycastHit.transform.tag == "MuseumSecret")
+        if (raycastHit.transform.CompareTag("MuseumSecret"))
         {
             SecretPickup secretPickup = raycastHit.transform.GetComponent<SecretPickup>();
 
             secretPickup.OpenSecretPanel();
+            secretPickup.ReadDescription();
         }
-        else if (raycastHit.transform.tag == "HiddenSecret")
+        else if (raycastHit.transform.CompareTag("HiddenSecret"))
         {
             SecretPickup secretPickup = raycastHit.transform.GetComponent<SecretPickup>();
 
             secretPickup.OpenSecretPanel();
+            secretPickup.ReadDescription();
             secretPickup.FindSecret();
         }
-        else if (raycastHit.transform.tag == "StartQuiz")
-        {
-            SceneManager.LoadScene(2);
-        }
-        else if (raycastHit.transform.tag == "PasswordClickObject")
+        else if (raycastHit.transform.CompareTag("PasswordClickObject"))
         {
             TutorialStateManager.instance.OpenPasswordInfoPanel();
+        }
+        else if (raycastHit.transform.CompareTag("StartQuiz"))
+        {
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -95,5 +92,11 @@ public class PointerManager : MonoBehaviour
     {
         pointerImage.sprite = defaultPointer;
         pointerImage.transform.localScale = defaultPointerScale;
+    }
+
+    private void SetSelectPointerImage()
+    {
+        pointerImage.sprite = selectPointer;
+        pointerImage.transform.localScale = selectPointerScale;
     }
 }

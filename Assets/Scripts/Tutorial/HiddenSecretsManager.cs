@@ -14,10 +14,11 @@ public class HiddenSecretsManager : MonoBehaviour
     [Space(10)]
     [SerializeField] private TextMeshProUGUI passwordWorldText;
 
-    public static HiddenSecretsManager instance;
-
     private int secretsFound = 0;
+
     private char[] password = new char[11];
+
+    public static HiddenSecretsManager instance;
 
     private void Awake()
     {
@@ -43,6 +44,19 @@ public class HiddenSecretsManager : MonoBehaviour
         FillPassword();
     }
 
+    private void FillPassword()
+    {
+        passwordUIText.text = string.Join(" ", password);
+        passwordWorldText.text = string.Join(" ", password);
+    }
+
+    public void AddPasswordElement(char character, int index)
+    {
+        password[index] = character;
+
+        FillPassword();
+    }
+
     public void AddSecretFound()
     {
         secretsFound += 1;
@@ -54,19 +68,6 @@ public class HiddenSecretsManager : MonoBehaviour
             ShowInfoUIText();
             TutorialStateManager.instance.ActivatePasswordClickObject();
         }
-    }
-
-    public void AddPasswordElement(char character, int index)
-    {
-        password[index] = character;
-
-        FillPassword();
-    }
-
-    private void FillPassword()
-    {
-        passwordUIText.text = string.Join(" ", password);
-        passwordWorldText.text = string.Join(" ", password);
     }
 
     public void ShowSecretsFoundUIText()

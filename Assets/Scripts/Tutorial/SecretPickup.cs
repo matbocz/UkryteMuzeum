@@ -18,6 +18,7 @@ public class SecretPickup : MonoBehaviour
     [SerializeField] private char character2;
     [SerializeField] private int index2;
 
+    private bool isRead = false;
     private bool isFound = false;
 
     private void Start()
@@ -56,6 +57,16 @@ public class SecretPickup : MonoBehaviour
         FindObjectOfType<AudioStateManager>().TurnUpMusic();
         FindObjectOfType<AudioStateManager>().PlaySound("BookClose");
         FindObjectOfType<AudioStateManager>().StopSound(voiceSoundName);
+    }
+
+    public void ReadDescription()
+    {
+        if (isRead == false)
+        {
+            AllSecretsManager.instance.AddDescriptionRead();
+
+            isRead = true;
+        }
     }
 
     public void FindSecret()

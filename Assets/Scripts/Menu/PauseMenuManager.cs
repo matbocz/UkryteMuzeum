@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] private GameObject movementOptionsPanel;
     [SerializeField] private GameObject controlOptionsPanel;
     [SerializeField] private GameObject confirmationPanel;
+
+    [Header("Texts")]
+    [SerializeField] private Text secretsFoundText;
+    [SerializeField] private Text descriptionsReadText;
+    [SerializeField] private Text passwordText;
 
     private void Start()
     {
@@ -37,18 +43,14 @@ public class PauseMenuManager : MonoBehaviour
 
     private void PauseGame()
     {
-        GameStateManager.instance.StopTime();
-        GameStateManager.instance.ShowCursor();
-        GameStateManager.instance.gameIsPaused = true;
+        GameStateManager.instance.StopGame();
 
         ShowPausePanel();
     }
 
     public void ResumeGame()
     {
-        GameStateManager.instance.StartTime();
-        GameStateManager.instance.HideCursor();
-        GameStateManager.instance.gameIsPaused = false;
+        GameStateManager.instance.StartGame();
 
         CloseAllPanels();
     }
@@ -67,6 +69,11 @@ public class PauseMenuManager : MonoBehaviour
     {
         CloseAllPanels();
         pausePanel.SetActive(true);
+
+
+        descriptionsReadText.text = AllSecretsManager.instance.descriptionsReadString;
+        secretsFoundText.text = HiddenSecretsManager.instance.secretsFoundUIText.text;
+        passwordText.text = HiddenSecretsManager.instance.passwordUIText.text;
     }
 
     public void ShowOptionsPanel()
