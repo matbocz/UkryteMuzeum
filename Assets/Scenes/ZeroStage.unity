@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44824904, g: 0.49827605, b: 0.5755831, a: 1}
+  m_IndirectSpecularColor: {r: 0.44824815, g: 0.49827522, b: 0.5755823, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9901,12 +9901,12 @@ PrefabInstance:
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: normalMusicVolume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: reducedMusicVolume
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
@@ -10141,12 +10141,12 @@ PrefabInstance:
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: environmentSounds.Array.data[0].volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: environmentSounds.Array.data[1].volume
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
@@ -10906,6 +10906,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sensitivityY
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285679697505785095, guid: f8f00ee91d6e1654e926286b327e7157,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7285679697544651009, guid: f8f00ee91d6e1654e926286b327e7157,
         type: 3}

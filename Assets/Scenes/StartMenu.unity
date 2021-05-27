@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: normalMusicVolume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
@@ -226,12 +226,12 @@ PrefabInstance:
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: environmentSounds.Array.data[0].volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: environmentSounds.Array.data[1].volume
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f6a575b367f464bbcefe93d433ee01, type: 3}
