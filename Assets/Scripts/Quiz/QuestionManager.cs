@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -19,28 +17,30 @@ public class QuestionManager : MonoBehaviour
 
     private void Start()
     {
+        // Hide the Next Question Button
         nextQuestionButton.gameObject.SetActive(false);
     }
 
     public void AnswerQuestion()
     {
+        // Get button clicked by user
         GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
 
-        ColorBlock clickedButtonColors = clickedButton.GetComponent<Button>().colors;
-        ColorBlock correctButtonColors = correctButton.colors;
-
-        DisableAllQuestionButtons();
-
+        // Check that the user clicked the correct button
         if (clickedButton.name == correctButton.name)
         {
-            HandleGoodAnswer(clickedButton, clickedButtonColors);
+            HandleGoodAnswer(clickedButton);
         }
         else
         {
-            HandleBadAnswer(clickedButton, clickedButtonColors, correctButtonColors);
+            HandleBadAnswer(clickedButton);
         }
 
+        // Show the Next Question Button
         nextQuestionButton.gameObject.SetActive(true);
+
+        // Disable all Question Buttons
+        DisableAllQuestionButtons();
     }
 
     private void DisableAllQuestionButtons()
@@ -51,21 +51,25 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    private void HandleGoodAnswer(GameObject clickedButton, ColorBlock clickedButtonColors)
+    private void HandleGoodAnswer(GameObject clickedButton)
     {
-        clickedButtonColors.normalColor = goodButtonColor;
+        // Change the color of the clicked button
+        clickedButton.GetComponent<Button>().image.color = goodButtonColor;
 
-        clickedButton.GetComponent<Button>().colors = clickedButtonColors;
+        // Play the good answer sound
+        FindObjectOfType<AudioStateManager>().PlaySound("GoodAnswer");
 
-        QuizManager.instance.IncreasePoints();
+        // Give the user one point
+        FindObjectOfType<QuizManager>().IncreasePoints();
     }
 
-    private void HandleBadAnswer(GameObject clickedButton, ColorBlock clickedButtonColors, ColorBlock correctButtonColors)
+    private void HandleBadAnswer(GameObject clickedButton)
     {
-        clickedButtonColors.normalColor = badButtonColor;
-        correctButtonColors.normalColor = goodButtonColor;
+        // Change the color of the clicked button and the color of the correct button
+        clickedButton.GetComponent<Button>().image.color = badButtonColor;
+        correctButton.image.color = goodButtonColor;
 
-        clickedButton.GetComponent<Button>().colors = clickedButtonColors;
-        correctButton.colors = correctButtonColors;
+        // Play the bad answer sound
+        FindObjectOfType<AudioStateManager>().PlaySound("BadAnswer");
     }
 }
