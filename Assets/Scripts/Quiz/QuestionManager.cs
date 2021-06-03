@@ -5,15 +5,16 @@ using UnityEngine.UI;
 public class QuestionManager : MonoBehaviour
 {
     [Header("Buttons")]
-    [SerializeField] private Button[] questionButtons = new Button[4];
+    [SerializeField] private Button[] answerButtons = new Button[4];
 
     [Space(10)]
     [SerializeField] private Button correctButton;
     [SerializeField] private Button nextQuestionButton;
 
-    [Header("Button colors")]
-    [SerializeField] private Color goodButtonColor = Color.green;
-    [SerializeField] private Color badButtonColor = Color.red;
+    [Header("Time for the next question (seconds)")]
+    [SerializeField] private int time = 5;
+
+    private bool questionAnswered = false;
 
     private void Start()
     {
@@ -21,9 +22,18 @@ public class QuestionManager : MonoBehaviour
         nextQuestionButton.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        // If the user answered the question, start counting down to the next question
+        if (questionAnswered == true)
+        {
+            StartCoroutine(FindObjectOfType<QuizManager>().WaitBeforeShowNextQuestionCoroutine(time));
+        }
+    }
+
     public void AnswerQuestion()
     {
-        // Get button clicked by user
+        // Get the button clicked by the user
         GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
 
         // Check that the user clicked the correct button
@@ -36,16 +46,19 @@ public class QuestionManager : MonoBehaviour
             HandleBadAnswer(clickedButton);
         }
 
+        // Set that the question has been answered
+        questionAnswered = true;
+
         // Show the Next Question Button
         nextQuestionButton.gameObject.SetActive(true);
 
         // Disable all Question Buttons
-        DisableAllQuestionButtons();
+        DisableAllAnswerButtons();
     }
 
-    private void DisableAllQuestionButtons()
+    private void DisableAllAnswerButtons()
     {
-        foreach (Button button in questionButtons)
+        foreach (Button button in answerButtons)
         {
             button.enabled = false;
         }
@@ -54,7 +67,7 @@ public class QuestionManager : MonoBehaviour
     private void HandleGoodAnswer(GameObject clickedButton)
     {
         // Change the color of the clicked button
-        clickedButton.GetComponent<Button>().image.color = goodButtonColor;
+        clickedButton.GetComponent<Button>().image.color = FindObjectOfType<QuizManager>().GetGoodButtonColor();
 
         // Play the good answer sound
         FindObjectOfType<AudioStateManager>().PlaySound("GoodAnswer");
@@ -66,8 +79,8 @@ public class QuestionManager : MonoBehaviour
     private void HandleBadAnswer(GameObject clickedButton)
     {
         // Change the color of the clicked button and the color of the correct button
-        clickedButton.GetComponent<Button>().image.color = badButtonColor;
-        correctButton.image.color = goodButtonColor;
+        clickedButton.GetComponent<Button>().image.color = FindObjectOfType<QuizManager>().GetBadButtonColor();
+        correctButton.image.color = FindObjectOfType<QuizManager>().GetGoodButtonColor();
 
         // Play the bad answer sound
         FindObjectOfType<AudioStateManager>().PlaySound("BadAnswer");

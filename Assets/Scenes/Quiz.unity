@@ -1614,15 +1614,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 1633215908}
   - {fileID: 108374719}
   - {fileID: 1578072962}
   - {fileID: 762065910}
   correctButton: {fileID: 108374719}
   nextQuestionButton: {fileID: 283216370}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &165704323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3514,15 +3513,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 915598261}
   - {fileID: 968995509}
   - {fileID: 1993743423}
   - {fileID: 824872533}
   correctButton: {fileID: 824872533}
   nextQuestionButton: {fileID: 64543939}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &587631738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8439,15 +8437,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 982528994}
   - {fileID: 561029531}
   - {fileID: 1714130616}
   - {fileID: 18216606}
   correctButton: {fileID: 1714130616}
   nextQuestionButton: {fileID: 1879978167}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &1171198056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8771,15 +8768,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 1674772517}
   - {fileID: 809074710}
   - {fileID: 931272531}
   - {fileID: 91114914}
   correctButton: {fileID: 1674772517}
   nextQuestionButton: {fileID: 1897496830}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &1266442357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8999,15 +8995,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 1903053560}
   - {fileID: 525619835}
   - {fileID: 783867829}
   - {fileID: 912609146}
   correctButton: {fileID: 525619835}
   nextQuestionButton: {fileID: 1162464601}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &1294087665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9505,15 +9500,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 215486789}
   - {fileID: 1997878030}
   - {fileID: 1761944646}
   - {fileID: 928194558}
   correctButton: {fileID: 928194558}
   nextQuestionButton: {fileID: 2133840767}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &1372715850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10789,6 +10783,8 @@ MonoBehaviour:
   - {fileID: 165704321}
   - {fileID: 2054527972}
   - {fileID: 1845604497}
+  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
+  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1633215904
 GameObject:
   m_ObjectHideFlags: 0
@@ -11609,15 +11605,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 89787233}
   - {fileID: 1411743630}
   - {fileID: 965919715}
   - {fileID: 863014461}
   correctButton: {fileID: 1411743630}
   nextQuestionButton: {fileID: 1067614706}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!1 &1710162735
 GameObject:
   m_ObjectHideFlags: 0
@@ -12070,15 +12065,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 43663704}
   - {fileID: 890265654}
   - {fileID: 131885263}
   - {fileID: 1955087222}
   correctButton: {fileID: 131885263}
   nextQuestionButton: {fileID: 270810862}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &1845604499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13805,15 +13799,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 136790023}
   - {fileID: 1547560803}
   - {fileID: 1293814651}
   - {fileID: 913214714}
   correctButton: {fileID: 913214714}
   nextQuestionButton: {fileID: 695778818}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &2054527974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13903,15 +13896,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acbb5d00bf910147a31d74209560238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionButtons:
+  answerButtons:
   - {fileID: 535314165}
   - {fileID: 1138618854}
   - {fileID: 1471381893}
   - {fileID: 484728345}
   correctButton: {fileID: 535314165}
   nextQuestionButton: {fileID: 823116809}
-  goodButtonColor: {r: 0, g: 1, b: 0, a: 1}
-  badButtonColor: {r: 1, g: 0, b: 0, a: 1}
+  time: 5
 --- !u!114 &2076363873
 MonoBehaviour:
   m_ObjectHideFlags: 0

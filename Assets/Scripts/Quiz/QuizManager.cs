@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,6 +11,10 @@ public class QuizManager : MonoBehaviour
 
     [Space(10)]
     [SerializeField] private GameObject[] questionPanels = new GameObject[5];
+
+    [Header("Button colors")]
+    [SerializeField] private Color goodButtonColor = Color.green;
+    [SerializeField] private Color badButtonColor = Color.red;
 
     private int questionNumber = 1;
     private int points = 0;
@@ -32,6 +37,13 @@ public class QuizManager : MonoBehaviour
         questionPanels[0].SetActive(true);
     }
 
+    public IEnumerator WaitBeforeShowNextQuestionCoroutine(int seconds)
+    {
+        // Wait before showing next Question Panel
+        yield return new WaitForSeconds(seconds);
+        ShowNextQuestion();
+    }
+
     public void ShowNextQuestion()
     {
         // Hide previous Question Panel and show next Question Panel
@@ -49,7 +61,7 @@ public class QuizManager : MonoBehaviour
         endPanel.SetActive(true);
 
         // Update text with results
-        endPanel.GetComponentInChildren<Text>().text = "Wyniki: " + GetPoints() + " / " + GetNumberOfQuestions();
+        endPanel.GetComponentInChildren<Text>().text = "Wyniki: " + points.ToString() + " / " + questionPanels.Length.ToString();
     }
 
     public void EndQuiz()
@@ -63,13 +75,13 @@ public class QuizManager : MonoBehaviour
         points++;
     }
 
-    private int GetPoints()
+    public Color GetGoodButtonColor()
     {
-        return points;
+        return goodButtonColor;
     }
 
-    private int GetNumberOfQuestions()
+    public Color GetBadButtonColor()
     {
-        return questionPanels.Length;
+        return badButtonColor;
     }
 }
