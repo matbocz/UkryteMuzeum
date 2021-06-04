@@ -38,7 +38,6 @@ public class SecretPickup : MonoBehaviour
     private void PlayBookOpenSounds()
     {
         FindObjectOfType<AudioStateManager>().TurnDownMusic();
-        FindObjectOfType<AudioStateManager>().PlaySound("BookOpen");
         FindObjectOfType<AudioStateManager>().PlaySound(voiceSoundName);
     }
 
@@ -61,6 +60,8 @@ public class SecretPickup : MonoBehaviour
 
     public void ReadDescription()
     {
+        // If the user reads the description for the first time,
+        // add one to the number of read descriptions
         if (isRead == false)
         {
             AllSecretsManager.instance.AddDescriptionRead();
@@ -71,6 +72,9 @@ public class SecretPickup : MonoBehaviour
 
     public void FindSecret()
     {
+        // If the user finds the secret for the first time,
+        // add one to the number of secrets found
+        // add two letters to the password
         if (isFound == false)
         {
             HiddenSecretsManager.instance.AddSecretFound();
