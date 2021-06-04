@@ -39,9 +39,19 @@ public class QuizManager : MonoBehaviour
 
     public IEnumerator WaitBeforeShowNextQuestionCoroutine(int seconds)
     {
-        // Wait before showing next Question Panel
+        // Wait before showing next Panel
         yield return new WaitForSeconds(seconds);
-        ShowNextQuestion();
+
+        // If this is not the last question, show the next Question Panel
+        // Otherwise, go to the End Panel
+        if (questionNumber != questionPanels.Length)
+        {
+            ShowNextQuestion();
+        }
+        else
+        {
+            ShowResults();
+        }
     }
 
     public void ShowNextQuestion()
