@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SecretPickup : MonoBehaviour
 {
@@ -37,8 +35,8 @@ public class SecretPickup : MonoBehaviour
 
     private void PlayBookOpenSounds()
     {
-        FindObjectOfType<AudioStateManager>().TurnDownMusic();
-        FindObjectOfType<AudioStateManager>().PlaySound(voiceSoundName);
+        AudioStateManager.instance.TurnDownMusic();
+        AudioStateManager.instance.PlaySound(voiceSoundName);
     }
 
     public void CloseSecretPanel()
@@ -53,15 +51,13 @@ public class SecretPickup : MonoBehaviour
 
     private void PlayBookCloseSounds()
     {
-        FindObjectOfType<AudioStateManager>().TurnUpMusic();
-        FindObjectOfType<AudioStateManager>().PlaySound("BookClose");
-        FindObjectOfType<AudioStateManager>().StopSound(voiceSoundName);
+        AudioStateManager.instance.TurnUpMusic();
+        AudioStateManager.instance.StopSound(voiceSoundName);
+        AudioStateManager.instance.PlaySound("BookClose");
     }
 
     public void ReadDescription()
     {
-        // If the user reads the description for the first time,
-        // add one to the number of read descriptions
         if (isRead == false)
         {
             AllSecretsManager.instance.AddDescriptionRead();
@@ -72,9 +68,6 @@ public class SecretPickup : MonoBehaviour
 
     public void FindSecret()
     {
-        // If the user finds the secret for the first time,
-        // add one to the number of secrets found
-        // add two letters to the password
         if (isFound == false)
         {
             HiddenSecretsManager.instance.AddSecretFound();

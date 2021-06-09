@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class AudioStateManager : MonoBehaviour
 {
@@ -21,12 +18,27 @@ public class AudioStateManager : MonoBehaviour
 
     AudioSource musicSource;
 
+    public static AudioStateManager instance;
+
     private void Awake()
     {
+        CreateInstance();
+
         CreateVoiceAudioSources();
         CreateEnvironmentAudioSources();
-
         ConcatenateAudioSources();
+    }
+
+    private void CreateInstance()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void CreateVoiceAudioSources()

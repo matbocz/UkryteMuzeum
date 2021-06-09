@@ -70,7 +70,7 @@ public class QuestionManager : MonoBehaviour
         clickedButton.GetComponent<Button>().image.color = FindObjectOfType<QuizManager>().GetGoodButtonColor();
 
         // Play the good answer sound
-        FindObjectOfType<AudioStateManager>().PlaySound("GoodAnswer");
+        AudioStateManager.instance.PlaySound("GoodAnswer");
 
         // Give the user one point
         FindObjectOfType<QuizManager>().IncreasePoints();
@@ -83,6 +83,6 @@ public class QuestionManager : MonoBehaviour
         correctButton.image.color = FindObjectOfType<QuizManager>().GetGoodButtonColor();
 
         // Play the bad answer sound
-        FindObjectOfType<AudioStateManager>().PlaySound("BadAnswer");
+        AudioStateManager.instance.PlaySound("BadAnswer");
     }
 }
