@@ -37,17 +37,17 @@ public class GameStateManager : MonoBehaviour
         Cursor.visible = false;
     }
 
-    public void StopGame()
-    {
-        StopTime();
-        ShowCursor();
-        gameIsPaused = true;
-    }
-
     public void StartGame()
     {
         StartTime();
         HideCursor();
         gameIsPaused = false;
+    }
+
+    public void StopGame()
+    {
+        StopTime();
+        ShowCursor();
+        gameIsPaused = true;
     }
 }
