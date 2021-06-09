@@ -17,6 +17,7 @@ public class TutorialStateManager : MonoBehaviour
 
     [Header("Tutorial Step 3 - Museum floor")]
     [SerializeField] private GameObject tutorialPanel3;
+    [SerializeField] private GameObject MiniMapOverlay;
     [SerializeField] private GameObject[] lockedDoors = new GameObject[6];
 
     [Header("Tutorial End - Return to the museum")]
@@ -95,6 +96,8 @@ public class TutorialStateManager : MonoBehaviour
         // Zamknij panel z informacją o poszukiwaniach sekretów i informacje o konieczności wjechania windą w górę
         tutorialPanel3.SetActive(false);
         tutorialOverlay2.SetActive(false);
+
+        MiniMapOverlay.SetActive(true);
 
         // Pokaż na ekranie ilość znalezionych sekretów i hasło
         HiddenSecretsManager.instance.ShowSecretsFoundUIText();
