@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerLook : MonoBehaviour
@@ -32,8 +30,8 @@ public class PlayerLook : MonoBehaviour
 
     private void ProcessRotation()
     {
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.parent.Rotate(Vector3.up, mouseX);
+        Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.Rotate(Vector3.up, mouseX);
     }
 
     public void ChangeSensitivityX(Slider slider)
