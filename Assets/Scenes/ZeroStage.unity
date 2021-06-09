@@ -1294,9 +1294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80796b2420a16f44291a23200f61b9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secretsFoundUIText: {fileID: 474686475}
-  passwordUIText: {fileID: 1019794013}
-  infoUIText: {fileID: 1365042270}
+  secretsFoundOverlay: {fileID: 474686475}
+  passwordOverlay: {fileID: 1019794013}
+  backToMuseumOverlay: {fileID: 1365042270}
   passwordWorldText: {fileID: 1561394229}
 --- !u!114 &78117756 stripped
 MonoBehaviour:

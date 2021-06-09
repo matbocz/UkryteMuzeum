@@ -72,8 +72,8 @@ public class PauseMenuManager : MonoBehaviour
 
 
         descriptionsReadText.text = AllSecretsManager.instance.descriptionsReadString;
-        secretsFoundText.text = HiddenSecretsManager.instance.secretsFoundUIText.text;
-        passwordText.text = HiddenSecretsManager.instance.passwordUIText.text;
+        secretsFoundText.text = HiddenSecretsManager.instance.secretsFoundOverlay.text;
+        passwordText.text = HiddenSecretsManager.instance.passwordOverlay.text;
     }
 
     public void ShowOptionsPanel()

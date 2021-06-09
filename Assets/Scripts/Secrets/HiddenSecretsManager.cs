@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class HiddenSecretsManager : MonoBehaviour
 {
     [Header("Text")]
-    [SerializeField] public Text secretsFoundUIText;
-    [SerializeField] public Text passwordUIText;
-    [SerializeField] public Text infoUIText;
+    [SerializeField] public Text secretsFoundOverlay;
+    [SerializeField] public Text passwordOverlay;
+    [SerializeField] public Text backToMuseumOverlay;
 
     [Space(10)]
     [SerializeField] private TextMeshProUGUI passwordWorldText;
@@ -46,7 +46,7 @@ public class HiddenSecretsManager : MonoBehaviour
 
     private void FillPassword()
     {
-        passwordUIText.text = string.Join(" ", password);
+        passwordOverlay.text = string.Join(" ", password);
         passwordWorldText.text = string.Join(" ", password);
     }
 
@@ -61,7 +61,7 @@ public class HiddenSecretsManager : MonoBehaviour
     {
         secretsFound += 1;
 
-        secretsFoundUIText.text = "Znalezione zabytki: " + secretsFound.ToString() + " / 4";
+        secretsFoundOverlay.text = "Znalezione zabytki: " + secretsFound.ToString() + " / 4";
 
         if (secretsFound == 4)
         {
@@ -72,31 +72,31 @@ public class HiddenSecretsManager : MonoBehaviour
 
     public void ShowSecretsFoundUIText()
     {
-        secretsFoundUIText.gameObject.SetActive(true);
+        secretsFoundOverlay.gameObject.SetActive(true);
     }
 
     public void CloseSecretsFoundUIText()
     {
-        secretsFoundUIText.gameObject.SetActive(false);
+        secretsFoundOverlay.gameObject.SetActive(false);
     }
 
     public void ShowPasswordUIText()
     {
-        passwordUIText.gameObject.SetActive(true);
+        passwordOverlay.gameObject.SetActive(true);
     }
 
     public void ClosePasswordUIText()
     {
-        passwordUIText.gameObject.SetActive(false);
+        passwordOverlay.gameObject.SetActive(false);
     }
 
     public void ShowInfoUIText()
     {
-        infoUIText.gameObject.SetActive(true);
+        backToMuseumOverlay.gameObject.SetActive(true);
     }
 
     public void CloseInfoUIText()
     {
-        infoUIText.gameObject.SetActive(false);
+        backToMuseumOverlay.gameObject.SetActive(false);
     }
 }

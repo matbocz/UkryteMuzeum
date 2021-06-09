@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialStateManager : MonoBehaviour
@@ -15,14 +14,16 @@ public class TutorialStateManager : MonoBehaviour
     [SerializeField] private GameObject tutorialPanel2;
     [SerializeField] private GameObject tutorialOverlay2;
 
-    [Header("Tutorial Step 3 - Museum floor")]
+    [Header("Tutorial Step 3 - Start secrets searching")]
     [SerializeField] private GameObject tutorialPanel3;
     [SerializeField] private GameObject MiniMapOverlay;
     [SerializeField] private GameObject[] lockedDoors = new GameObject[6];
 
-    [Header("Tutorial End - Return to the museum")]
+    [Header("Tutorial Step 4 - End secrets searching")]
     [SerializeField] private GameObject passwordClickObject;
     [SerializeField] private GameObject passwordInfoPanel;
+
+    [Header("Tutorial End - Start exit searching")]
     [SerializeField] private GameObject tutorialEndPanel;
     [SerializeField] private GameObject tutorialEndOverlay;
     [SerializeField] private GameObject quizDoor;
@@ -34,7 +35,19 @@ public class TutorialStateManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        CreateInstance();
+    }
+
+    private void CreateInstance()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -44,134 +57,91 @@ public class TutorialStateManager : MonoBehaviour
 
     private void OpenTutorialPanelStart()
     {
-        // Wywołanie: Uruchomienie sceny
-
-        // Otwórz panel początkowy
         tutorialStartPanel.SetActive(true);
 
-        // Zatrzymaj grę
         GameStateManager.instance.PauseGame();
     }
 
     public void CloseTutorialPanelStart()
     {
-        // Wywołanie: Naciśnięcie przycisku - panel początkowy
-
-        // Zamknij panel początkowy
         tutorialStartPanel.SetActive(false);
 
-        // Wznów grę
         GameStateManager.instance.ResumeGame();
     }
 
     public void CloseTutorialPanel1()
     {
-        // Wywołanie: Naciśnięcie przycisku - panel z informacją o ustawieniach sterowania
-
-        // Zamknij panel z informacją o ustawieniach sterowania; pokaż informacje o konieczności pójścia dalej ścieżką
         tutorialPanel1.SetActive(false);
         tutorialOverlay1.SetActive(true);
 
-        // Wznów grę
         GameStateManager.instance.ResumeGame();
     }
 
     public void CloseTutorialPanel2()
     {
-        // Wywołanie: Naciśnięcie przycisku - panel z informacją o muzeum
-
-        // Zamknij panel z informacją o muzeum i informacje o konieczności pójścia dalej ścieżką; pokaż informacje o konieczności wjechania windą w górę
         tutorialPanel2.SetActive(false);
         tutorialOverlay1.SetActive(false);
         tutorialOverlay2.SetActive(true);
 
-        // Wznów grę
         GameStateManager.instance.ResumeGame();
     }
 
     public void CloseTutorialPanel3()
     {
-        // Wywołanie: Naciśnięcie przycisku - panel z informacją o poszukiwaniach sekretów
-
-        // Zamknij panel z informacją o poszukiwaniach sekretów i informacje o konieczności wjechania windą w górę
         tutorialPanel3.SetActive(false);
         tutorialOverlay2.SetActive(false);
-
         MiniMapOverlay.SetActive(true);
 
-        // Pokaż na ekranie ilość znalezionych sekretów i hasło
         HiddenSecretsManager.instance.ShowSecretsFoundUIText();
         HiddenSecretsManager.instance.ShowPasswordUIText();
 
-        // Otwórz wszystkie zamknięte przejścia
         foreach (GameObject lockedDoor in lockedDoors)
         {
             lockedDoor.SetActive(false);
         }
 
-        // Wznów grę
         GameStateManager.instance.ResumeGame();
     }
 
     public void ActivatePasswordClickObject()
     {
-        // Wywołanie: Znalezienie wszystkich sekretów - skrypt HiddenSecretsManager
-
-        // Aktywuj możliwość kliknięcia na hasło w labiryncie
         passwordClickObject.SetActive(true);
     }
 
     public void OpenPasswordInfoPanel()
     {
-        // Wywołanie: Kliknięcie na hasło w muzeum - skrypt PointerManager
-
-        // Ukryj ilość znalezionych sekretów, hasło i informacje o konieczności powrotu do muzeum
         HiddenSecretsManager.instance.CloseSecretsFoundUIText();
         HiddenSecretsManager.instance.ClosePasswordUIText();
         HiddenSecretsManager.instance.CloseInfoUIText();
 
-        // Otwórz panel z informacją o haśle
         passwordInfoPanel.SetActive(true);
 
-        // Zatrzymaj grę
         GameStateManager.instance.PauseGame();
     }
 
     public void OpenTutorialEndPanel()
     {
-        // Wywołanie: Naciśnięcie przycisku - panel z informacją o haśle
-
-        // Zamknij panel z informacją o haśle
         passwordInfoPanel.SetActive(false);
 
-        // Pokaż panel z ostatnim zadaniem
         tutorialEndPanel.SetActive(true);
     }
 
     public void CloseTutorialEndPanel()
     {
-        // Wywołanie: Naciśnięcie przycisku - panel z ostatnim zadaniem
-
-        // Zamknij panel z ostatnim zadaniem
         tutorialEndPanel.SetActive(false);
 
-        // Pokaż informacje o konieczności znalezienia pomieszczenia z quizem i otwórz drzwi do pomieszczenia z quizem
         tutorialEndOverlay.SetActive(true);
         quizDoor.SetActive(true);
 
-        // Wznów grę
         GameStateManager.instance.ResumeGame();
     }
 
     public void HideActiveTutorialOverlays()
     {
-        // Zapisz wszystkie overlaye do tablicy tutorialOverlays
         GetAllTutorialOverlays();
 
-        // Usuń wszystkie overlaye z tablicy activeTutorialOverlays
         activeTutorialOverlays.Clear();
 
-        // Znajdź wszystkie aktywne overlaye z tablicy tutorialOverlays i zapisz je do tablicy activeTutorialOverlays
         foreach (GameObject tutorialOverlay in tutorialOverlays)
         {
             if (tutorialOverlay.activeSelf == true)
@@ -186,15 +156,14 @@ public class TutorialStateManager : MonoBehaviour
     {
         tutorialOverlays[0] = tutorialOverlay1;
         tutorialOverlays[1] = tutorialOverlay2;
-        tutorialOverlays[2] = HiddenSecretsManager.instance.secretsFoundUIText.gameObject;
-        tutorialOverlays[3] = HiddenSecretsManager.instance.passwordUIText.gameObject;
-        tutorialOverlays[4] = HiddenSecretsManager.instance.infoUIText.gameObject;
+        tutorialOverlays[2] = HiddenSecretsManager.instance.secretsFoundOverlay.gameObject;
+        tutorialOverlays[3] = HiddenSecretsManager.instance.passwordOverlay.gameObject;
+        tutorialOverlays[4] = HiddenSecretsManager.instance.backToMuseumOverlay.gameObject;
         tutorialOverlays[5] = tutorialEndOverlay;
     }
 
     public void ShowActiveTutorialOverlays()
     {
-        // Aktywuj wszystkie overlaye zapisane w tablicy activeTutorialOverlays
         foreach (GameObject activeTutorialOverlay in activeTutorialOverlays)
         {
             try
