@@ -49,7 +49,7 @@ public class TutorialStateManager : MonoBehaviour
         tutorialStartPanel.SetActive(true);
 
         // Zatrzymaj grę
-        GameStateManager.instance.StopGame();
+        GameStateManager.instance.PauseGame();
     }
 
     public void CloseTutorialPanelStart()
@@ -60,7 +60,7 @@ public class TutorialStateManager : MonoBehaviour
         tutorialStartPanel.SetActive(false);
 
         // Wznów grę
-        GameStateManager.instance.StartGame();
+        GameStateManager.instance.ResumeGame();
     }
 
     public void CloseTutorialPanel1()
@@ -72,7 +72,7 @@ public class TutorialStateManager : MonoBehaviour
         tutorialOverlay1.SetActive(true);
 
         // Wznów grę
-        GameStateManager.instance.StartGame();
+        GameStateManager.instance.ResumeGame();
     }
 
     public void CloseTutorialPanel2()
@@ -85,7 +85,7 @@ public class TutorialStateManager : MonoBehaviour
         tutorialOverlay2.SetActive(true);
 
         // Wznów grę
-        GameStateManager.instance.StartGame();
+        GameStateManager.instance.ResumeGame();
     }
 
     public void CloseTutorialPanel3()
@@ -107,7 +107,7 @@ public class TutorialStateManager : MonoBehaviour
         }
 
         // Wznów grę
-        GameStateManager.instance.StartGame();
+        GameStateManager.instance.ResumeGame();
     }
 
     public void ActivatePasswordClickObject()
@@ -131,7 +131,7 @@ public class TutorialStateManager : MonoBehaviour
         passwordInfoPanel.SetActive(true);
 
         // Zatrzymaj grę
-        GameStateManager.instance.StopGame();
+        GameStateManager.instance.PauseGame();
     }
 
     public void OpenTutorialEndPanel()
@@ -157,7 +157,7 @@ public class TutorialStateManager : MonoBehaviour
         quizDoor.SetActive(true);
 
         // Wznów grę
-        GameStateManager.instance.StartGame();
+        GameStateManager.instance.ResumeGame();
     }
 
     public void HideActiveTutorialOverlays()

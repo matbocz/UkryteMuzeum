@@ -1,28 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
-    public bool gameIsPaused = false;
+    [HideInInspector] public bool gameIsPaused = false;
 
     public static GameStateManager instance;
 
     private void Awake()
     {
-        instance = this;
+        CreateInstance();
     }
 
-    public void StartTime()
+    private void CreateInstance()
     {
-        Camera.main.GetComponent<PlayerLook>().enabled = true;
-        Time.timeScale = 1;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != null)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void StopTime()
+    public void ResumeGame()
     {
-        Camera.main.GetComponent<PlayerLook>().enabled = false;
-        Time.timeScale = 0;
+        StartPlayer();
+        HideCursor();
+
+        gameIsPaused = false;
+    }
+
+    public void PauseGame()
+    {
+        StopPlayer();
+        ShowCursor();
+
+        gameIsPaused = true;
+    }
+
+    public void StartPlayer()
+    {
+        FindObjectOfType<PlayerLook>().enabled = true;
+        FindObjectOfType<PlayerMove>().enabled = true;
+    }
+
+    public void StopPlayer()
+    {
+        FindObjectOfType<PlayerLook>().enabled = false;
+        FindObjectOfType<PlayerMove>().enabled = false;
     }
 
     public void ShowCursor()
@@ -35,19 +61,5 @@ public class GameStateManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
-
-    public void StartGame()
-    {
-        StartTime();
-        HideCursor();
-        gameIsPaused = false;
-    }
-
-    public void StopGame()
-    {
-        StopTime();
-        ShowCursor();
-        gameIsPaused = true;
     }
 }

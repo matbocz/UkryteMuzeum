@@ -32,7 +32,7 @@ public class SecretPickup : MonoBehaviour
 
         PlayBookOpenSounds();
 
-        GameStateManager.instance.StopGame();
+        GameStateManager.instance.PauseGame();
     }
 
     private void PlayBookOpenSounds()
@@ -48,7 +48,7 @@ public class SecretPickup : MonoBehaviour
         PlayBookCloseSounds();
 
         TutorialStateManager.instance.ShowActiveTutorialOverlays();
-        GameStateManager.instance.StartGame();
+        GameStateManager.instance.ResumeGame();
     }
 
     private void PlayBookCloseSounds()

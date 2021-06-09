@@ -43,14 +43,14 @@ public class PauseMenuManager : MonoBehaviour
 
     private void PauseGame()
     {
-        GameStateManager.instance.StopGame();
+        GameStateManager.instance.PauseGame();
 
         ShowPausePanel();
     }
 
     public void ResumeGame()
     {
-        GameStateManager.instance.StartGame();
+        GameStateManager.instance.ResumeGame();
 
         CloseAllPanels();
     }

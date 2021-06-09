@@ -16,7 +16,7 @@ public class TutorialPickup : MonoBehaviour
             Destroy(gameObject);
 
             TutorialStateManager.instance.HideActiveTutorialOverlays();
-            GameStateManager.instance.StopGame();
+            GameStateManager.instance.PauseGame();
         }
     }
 
