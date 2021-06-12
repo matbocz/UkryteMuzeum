@@ -11354,7 +11354,7 @@ PrefabInstance:
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: normalMusicVolume
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
