@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float movementSpeed = 4f;
     [SerializeField] private float sprintMultiplier = 2f;
-    [SerializeField] private float gravity = -10f;
+    [SerializeField] private float gravity = -8f;
 
     [Header("Ground detection")]
     [SerializeField] private Transform groundCheck;
@@ -38,23 +38,13 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        DetectGround();
-
         HandleInput();
 
         ApplyMovement();
 
         ApplyVelocity();
-    }
 
-    private void DetectGround()
-    {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
+        DetectGround();
     }
 
     private void HandleInput()
@@ -82,6 +72,16 @@ public class PlayerMove : MonoBehaviour
     {
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+    }
+
+    private void DetectGround()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -5f;
+        }
     }
 
     public void ChangeMovementSpeed(Slider slider)

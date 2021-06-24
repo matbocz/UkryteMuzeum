@@ -31,7 +31,7 @@ public class PlayerLook : MonoBehaviour
     private void ProcessRotation()
     {
         Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up, mouseX);
+        transform.Rotate(Vector3.up * mouseX);
     }
 
     public void ChangeSensitivityX(Slider slider)
