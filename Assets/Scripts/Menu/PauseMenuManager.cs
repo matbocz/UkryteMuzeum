@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -29,23 +26,18 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (GameStateManager.instance.gameIsPaused == false)
         {
-            HandleEscapeKeyDown();
+            HandleMenuButtonDown();
         }
     }
 
-    private void HandleEscapeKeyDown()
+    private void HandleMenuButtonDown()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Menu"))
         {
-            PauseGame();
+            GameStateManager.instance.PauseGame();
+
+            ShowPausePanel();
         }
-    }
-
-    private void PauseGame()
-    {
-        GameStateManager.instance.PauseGame();
-
-        ShowPausePanel();
     }
 
     public void ResumeGame()
