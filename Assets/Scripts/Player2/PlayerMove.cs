@@ -13,9 +13,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float groundDistance = 0.5f;
 
-    [Header("Key bindings")]
-    [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
-
     private float x;
     private float z;
 
@@ -57,7 +54,7 @@ public class PlayerMove : MonoBehaviour
     {
         moveDirection = transform.right * x + transform.forward * z;
 
-        if (Input.GetKey(sprintKey))
+        if (Input.GetButton("Sprint"))
         {
             characterController.Move(moveDirection * movementSpeed * sprintMultiplier * Time.deltaTime);
         }
