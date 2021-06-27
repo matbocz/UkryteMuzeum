@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class PointerManager : MonoBehaviour
 {
@@ -17,7 +18,13 @@ public class PointerManager : MonoBehaviour
     [Header("Raycast")]
     [SerializeField] private float raycastRange = 2f;
 
-    RaycastHit raycastHit;
+    private RaycastHit raycastHit;
+    private string[] selectTags;
+
+    private void Start()
+    {
+        selectTags = new string[] { "MuseumSecret", "HiddenSecret", "StartQuiz", "PasswordClickObject" };
+    }
 
     private void Update()
     {
@@ -25,17 +32,13 @@ public class PointerManager : MonoBehaviour
 
         SetDefaultPointerImage();
 
-        // Check if the ray hits any object
         if (raycastHit.transform != null)
         {
-            // If the ray hits a specific object:
-            // - change cursor
-            // - let the user click on the object 
-            if (raycastHit.transform.CompareTag("MuseumSecret") || raycastHit.transform.CompareTag("HiddenSecret") || raycastHit.transform.CompareTag("StartQuiz") || raycastHit.transform.CompareTag("PasswordClickObject"))
+            if (selectTags.Contains(raycastHit.transform.tag))
             {
                 SetSelectPointerImage();
 
-                HandleMouseClick();
+                HandleActionButtonDown();
             }
         }
     }
@@ -46,12 +49,10 @@ public class PointerManager : MonoBehaviour
         Physics.Raycast(raycast, out raycastHit, raycastRange);
     }
 
-    private void HandleMouseClick()
+    private void HandleActionButtonDown()
     {
-        // Check if the user clicked the left mouse button
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Action"))
         {
-            // Check if the user has not clicked on the UI element
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 ActivateObject();
