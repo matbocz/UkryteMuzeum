@@ -14,16 +14,16 @@ public class TutorialStateManager : MonoBehaviour
     [SerializeField] private GameObject tutorialPanel2;
     [SerializeField] private GameObject tutorialOverlay2;
 
-    [Header("Tutorial Step 3 - Start secrets searching")]
+    [Header("Tutorial Step 3 - Start searching for secrets")]
     [SerializeField] private GameObject tutorialPanel3;
     [SerializeField] private GameObject MiniMapOverlay;
     [SerializeField] private GameObject[] lockedDoors = new GameObject[6];
 
-    [Header("Tutorial Step 4 - End secrets searching")]
+    [Header("Tutorial Step 4 - End searching for secrets")]
     [SerializeField] private GameObject passwordClickObject;
     [SerializeField] private GameObject passwordInfoPanel;
 
-    [Header("Tutorial End - Start exit searching")]
+    [Header("Tutorial End - Start searching for exit")]
     [SerializeField] private GameObject tutorialEndPanel;
     [SerializeField] private GameObject tutorialEndOverlay;
     [SerializeField] private GameObject quizDoor;
