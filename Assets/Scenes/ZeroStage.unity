@@ -10291,7 +10291,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: fd5eb21ba070b4041b3483659bb8ea06, type: 3}
+      objectReference: {fileID: 8300000, guid: 81fa2043274146247a7f1abb2436be27, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[0].name
@@ -10301,7 +10301,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: fb81d70c0cd899440a32f268e3115af8, type: 3}
+      objectReference: {fileID: 8300000, guid: b5a1aa5a99846a54aa0c2320520da505, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[1].name
@@ -10311,7 +10311,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 149fbf8b78f33dc4ca7849787ef0eafd, type: 3}
+      objectReference: {fileID: 8300000, guid: 9006697b30326174dbddb472e5c4aa33, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[2].name
@@ -10321,7 +10321,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[3].clip
       value: 
-      objectReference: {fileID: 8300000, guid: a16bbb4d3ab495448933265d0c28706f, type: 3}
+      objectReference: {fileID: 8300000, guid: 60773a4880b679840a9066f979aeeb17, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[3].name
@@ -10331,7 +10331,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[4].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 655fbd67df10e76449377b46e97ed02b, type: 3}
+      objectReference: {fileID: 8300000, guid: e0f2a15e81a38574daa3e9ce576a8f33, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[4].name
@@ -10341,7 +10341,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[5].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 681e7ea580933484d8f99afb7d4dfb73, type: 3}
+      objectReference: {fileID: 8300000, guid: f64ec3eb1abf3ef4599956856c5c7b9f, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[5].name
@@ -10351,7 +10351,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[6].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 36bda240d00bc8445befece1fb80d3e2, type: 3}
+      objectReference: {fileID: 8300000, guid: 54db613901ab5f846891aae879849a75, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[6].name
@@ -10361,7 +10361,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[7].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 8d31d18deeae83345ae3131fb328e923, type: 3}
+      objectReference: {fileID: 8300000, guid: f9f113ca9ea4961408f257b54dbb2ee1, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[7].name
@@ -10371,7 +10371,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[8].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 3befcbc039e556e49ba9ad5f82159656, type: 3}
+      objectReference: {fileID: 8300000, guid: 63c46c1bdd73d924b9283dcd5b41010c, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[8].name
@@ -10381,7 +10381,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[9].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 662d6dad5d4ba674496e4da67adc46e1, type: 3}
+      objectReference: {fileID: 8300000, guid: fb38e45182b6dd549a4c400a1d337902, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[9].name
@@ -10391,7 +10391,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[10].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 3b9e611471a3bf74b89d2fd4ccf15da9, type: 3}
+      objectReference: {fileID: 8300000, guid: ac94d3cd7e5ae5a4c9a52d2ba580514f, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[10].name
@@ -10401,7 +10401,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceSounds.Array.data[11].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 8c6b571113ca0b74bb573fccc6b349c6, type: 3}
+      objectReference: {fileID: 8300000, guid: 2e6b6bf4a34884447b28200f70f78255, type: 3}
     - target: {fileID: 3671509102891672675, guid: 97f6a575b367f464bbcefe93d433ee01,
         type: 3}
       propertyPath: voiceSounds.Array.data[11].name
