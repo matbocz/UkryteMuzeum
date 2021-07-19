@@ -375,7 +375,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1.8
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.5
@@ -402,7 +402,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundDistance: 0.5
-  sprintKey: 304
 --- !u!114 &1458846591
 MonoBehaviour:
   m_ObjectHideFlags: 0
