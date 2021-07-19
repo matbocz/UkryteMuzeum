@@ -8,10 +8,8 @@ public class AudioStateManager : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] private float normalMusicVolume;
     [SerializeField] [Range(0f, 1f)] private float reducedMusicVolume;
 
-    [Header("Voice Sounds")]
+    [Space(10)]
     public Sound[] voiceSounds;
-
-    [Header("Environment Sounds")]
     public Sound[] environmentSounds;
 
     private Sound[] sounds;
